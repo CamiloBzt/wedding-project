@@ -185,32 +185,6 @@
     background-size: 1000px 100%;
     animation: shimmer 2s infinite;
   }
-
-  /* Delay para animaciones */
-  .animation-delay-200 {
-    animation-delay: 200ms;
-  }
-
-  /* Slider personalizado para volumen */
-  .slider::-webkit-slider-thumb {
-    appearance: none;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    background: #d4a574;
-    cursor: pointer;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  }
-
-  .slider::-moz-range-thumb {
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    background: #d4a574;
-    cursor: pointer;
-    border: none;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  }
 }
 
 /* Scrollbar personalizada */

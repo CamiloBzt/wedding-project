@@ -209,10 +209,7 @@ const InvitationDetails: React.FC = () => {
 
       {/* Footer decorativo */}
       <div className={styles.footer}>
-        <p>{weddingDetails.hashtag || "Con amor, Johanna & Enrique"}</p>
-        <p className={styles.copyright}>
-          © 2025 - Todos los derechos reservados
-        </p>
+        <p className="text-[#d4a574]/60 text-sm">{weddingDetails.hashtag}</p>
         <FloralDecoration position="bottom-center" />
       </div>
     </div>
@@ -297,7 +294,7 @@ const PhotosModal: React.FC<{ onClose: () => void }> = ({ onClose }) => (
 
       <div className={styles.modalHeader}>
         <h2 className="text-2xl font-serif text-[#d4a574] mb-2">
-          Comparte tus fotos y videos
+          Comparte tus fotos y videos de la boda aquí
         </h2>
         <p className="text-[#fdf6f0]/80 text-sm">
           No queremos perdernos ningún momento de este hermoso día
