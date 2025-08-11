@@ -1,0 +1,152 @@
+.fadeInUp {
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.floralPattern {
+    width: 100%;
+    height: 100%;
+    background-image:
+        radial-gradient(circle at 20% 80%, rgba(212, 165, 116, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(212, 165, 116, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(253, 246, 240, 0.2) 0%, transparent 50%);
+    animation: floralFloat 20s ease-in-out infinite;
+}
+
+@keyframes floralFloat {
+
+    0%,
+    100% {
+        transform: scale(1) rotate(0deg);
+    }
+
+    50% {
+        transform: scale(1.1) rotate(5deg);
+    }
+}
+
+.detailsButton {
+    width: 100%;
+    padding: 16px 24px;
+    background: linear-gradient(135deg, #d4a574 0%, #e6b989 100%);
+    color: white;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(212, 165, 116, 0.3);
+}
+
+.detailsButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(212, 165, 116, 0.4);
+}
+
+.detailsButton:active {
+    transform: translateY(0);
+}
+
+.buttonGlow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.detailsButton:hover .buttonGlow {
+    opacity: 1;
+    animation: pulseGlow 1.5s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+
+    0%,
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.2);
+    }
+}
+
+.floatingHearts {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.floatingHeart {
+    position: absolute;
+    font-size: 20px;
+    opacity: 0.1;
+    animation: floatHeart 15s linear infinite;
+}
+
+.floatingHeart:nth-child(1) {
+    left: 10%;
+    animation-duration: 12s;
+}
+
+.floatingHeart:nth-child(2) {
+    left: 30%;
+    animation-duration: 15s;
+}
+
+.floatingHeart:nth-child(3) {
+    left: 50%;
+    animation-duration: 18s;
+}
+
+.floatingHeart:nth-child(4) {
+    left: 70%;
+    animation-duration: 14s;
+}
+
+.floatingHeart:nth-child(5) {
+    left: 90%;
+    animation-duration: 16s;
+}
+
+@keyframes floatHeart {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.1;
+    }
+
+    90% {
+        opacity: 0.1;
+    }
+
+    100% {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
