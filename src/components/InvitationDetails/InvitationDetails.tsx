@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { useWeddingDetails } from "@/contexts/InvitationContext";
 import AnimatedText from "@/components/shared/AnimatedText";
 import FloralDecoration from "@/components/shared/FloralDecoration";
 import HeartIcon from "@/components/shared/HeartIcon";
+import { useWeddingDetails } from "@/contexts/InvitationContext";
+import React, { useEffect, useState } from "react";
 import styles from "./InvitationDetails.module.css";
 
 // Componente de cuenta regresiva
@@ -144,7 +144,7 @@ const InvitationDetails: React.FC = () => {
 
     const interval = setInterval(() => {
       setActiveSection((prev) => (prev + 1) % sections.length);
-    }, 8000);
+    }, 60000);
     return () => clearInterval(interval);
   }, [sections.length]);
 
