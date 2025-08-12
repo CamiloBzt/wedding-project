@@ -31,9 +31,6 @@ const EnvelopeInvitation: React.FC = () => {
         <div className={styles.envelopeContainer}>
           {/* Base del sobre */}
           <div className={styles.envelopeBase}>
-            {/* Solapa frontal abierta */}
-            <div className={styles.envelopeFrontFlap}></div>
-
             {/* Carta saliendo del sobre */}
             <div className={styles.letterPeeking}>
               <div className="bg-wedding-cream p-6 md:p-8 rounded-lg shadow-xl border border-wedding-gold/20">
