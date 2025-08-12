@@ -1,28 +1,8 @@
 .container {
-    min-height: 100vh;
-    background: linear-gradient(135deg, #7c9070 0%, #a3b899 100%);
+    background: transparent;
     padding: 2rem;
     position: relative;
     overflow-x: hidden;
-}
-
-.header {
-    text-align: center;
-    padding: 3rem 1rem;
-    position: relative;
-    animation: fadeInDown 1s ease-out;
-}
-
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 .navigation {
@@ -44,6 +24,7 @@
     cursor: pointer;
     transition: all 0.3s ease;
     min-width: 80px;
+    backdrop-filter: blur(4px);
 }
 
 .navButton:hover {
@@ -52,8 +33,9 @@
 }
 
 .navButton.active {
-    background: rgba(212, 165, 116, 0.2);
+    background: rgba(212, 165, 116, 0.3);
     border-color: #d4a574;
+    box-shadow: 0 4px 12px rgba(212, 165, 116, 0.2);
 }
 
 .content {
@@ -68,17 +50,19 @@
     padding: 2rem;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
     animation: slideIn 0.6s ease-out;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(212, 165, 116, 0.2);
 }
 
 @keyframes slideIn {
     from {
         opacity: 0;
-        transform: translateX(-20px);
+        transform: translateY(20px);
     }
 
     to {
         opacity: 1;
-        transform: translateX(0);
+        transform: translateY(0);
     }
 }
 
@@ -92,7 +76,7 @@
     display: flex;
     flex-direction: column;
     padding: 0.75rem 0;
-    border-bottom: 1px solid rgba(90, 107, 80, 0.1);
+    border-bottom: 1px solid rgba(124, 144, 112, 0.1);
 }
 
 .infoItem:last-child {
@@ -110,26 +94,9 @@
 
 .infoValue {
     font-size: 1.125rem;
-    color: #5a6b50;
+    color: #7c9070;
     font-family: 'Montserrat', sans-serif;
-}
-
-.viewMoreButton {
-    margin-top: 1.5rem;
-    width: 100%;
-    padding: 0.75rem;
-    background: linear-gradient(135deg, #7c9070 0%, #a3b899 100%);
-    color: white;
-    border: none;
-    border-radius: 25px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.viewMoreButton:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(124, 144, 112, 0.3);
+    line-height: 1.5;
 }
 
 .timeline {
@@ -138,6 +105,9 @@
     background: rgba(253, 246, 240, 0.95);
     border-radius: 20px;
     padding: 2rem;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(212, 165, 116, 0.2);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
 }
 
 .timelineItems {
@@ -152,7 +122,7 @@
     top: 0;
     bottom: 0;
     width: 2px;
-    background: linear-gradient(180deg, #d4a574 0%, rgba(212, 165, 116, 0.2) 100%);
+    background: linear-gradient(180deg, #d4a574 0%, rgba(212, 165, 116, 0.3) 100%);
 }
 
 .timelineItem {
@@ -227,7 +197,7 @@
 
 .timelineEvent {
     font-size: 1rem;
-    color: #5a6b50;
+    color: #7c9070;
 }
 
 .actions {
@@ -250,10 +220,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    backdrop-filter: blur(8px);
 }
 
 .confirmButton {
-    background: linear-gradient(135deg, #d4a574 0%, #e6b989 100%);
+    background: linear-gradient(135deg, #d4a574 0%, #d4a574 100%);
     color: white;
     box-shadow: 0 4px 15px rgba(212, 165, 116, 0.3);
 }
@@ -265,154 +236,14 @@
 
 .mapButton {
     background: rgba(253, 246, 240, 0.95);
-    color: #5a6b50;
+    color: #7c9070;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(212, 165, 116, 0.2);
 }
 
 .mapButton:hover {
     transform: translateY(-2px);
     background: rgba(253, 246, 240, 1);
-}
-
-/* Estilos de Modales */
-.modalOverlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.7);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-    animation: fadeIn 0.3s ease;
-    padding: 1rem;
-}
-
-.modalContent {
-    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-    border-radius: 20px;
-    padding: 2rem;
-    max-width: 500px;
-    width: 100%;
-    max-height: 80vh;
-    overflow-y: auto;
-    position: relative;
-    animation: slideUp 0.3s ease;
-    border: 2px solid #d4a574;
-}
-
-@keyframes slideUp {
-    from {
-        transform: translateY(50px);
-        opacity: 0;
-    }
-
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-.closeButton {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    width: 30px;
-    height: 30px;
-    background: transparent;
-    border: none;
-    color: #d4a574;
-    font-size: 2rem;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.closeButton:hover {
-    transform: rotate(90deg);
-}
-
-.modalHeader {
-    text-align: center;
-    margin-bottom: 1.5rem;
-    color: #fdf6f0;
-}
-
-.modalBody {
-    color: #fdf6f0;
-}
-
-.tipsList {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.tipsList li {
-    padding: 0.75rem 0;
-    font-size: 1rem;
-    line-height: 1.6;
-    border-bottom: 1px solid rgba(253, 246, 240, 0.1);
-}
-
-.tipsList li:last-child {
-    border-bottom: none;
-}
-
-.giftOptions {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.giftOption {
-    background: rgba(253, 246, 240, 0.05);
-    padding: 1rem;
-    border-radius: 10px;
-    border-left: 3px solid #d4a574;
-}
-
-.giftOption h4 {
-    color: #d4a574;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-}
-
-.giftOption p {
-    margin: 0.25rem 0;
-    color: #fdf6f0;
-}
-
-.qrContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-}
-
-.qrCode {
-    padding: 1rem;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-.uploadButton {
-    padding: 1rem 2rem;
-    background: linear-gradient(135deg, #d4a574 0%, #c49764 100%);
-    color: white;
-    border: none;
-    border-radius: 25px;
-    font-weight: 600;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.uploadButton:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(212, 165, 116, 0.4);
 }
 
 .footer {
@@ -432,7 +263,11 @@
 }
 
 /* Responsive */
-@media (max-width: 640px) {
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+
     .navigation {
         gap: 0.5rem;
     }
@@ -442,7 +277,24 @@
         padding: 0.75rem 0.5rem;
     }
 
-    .modalContent {
+    .sectionCard {
         padding: 1.5rem;
+    }
+
+    .timeline {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .confirmButton,
+    .mapButton {
+        width: 100%;
+        max-width: 300px;
     }
 }

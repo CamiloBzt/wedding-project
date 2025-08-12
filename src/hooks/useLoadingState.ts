@@ -26,7 +26,7 @@ export const useLoadingState = (duration: number = 3000) => {
     }, 50);
 
     return () => clearInterval(interval);
-  }, [duration]);
+  }, []);
 
   const reset = () => {
     setState({ isLoading: true, progress: 0, error: null });

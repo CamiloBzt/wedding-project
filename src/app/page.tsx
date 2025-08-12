@@ -2,7 +2,7 @@
 
 import EnvelopeInvitation from "@/components/EnvelopeInvitation/EnvelopeInvitation";
 import LoadingScreen from "@/components/LoadingScreen/LoadingScreen";
-import SaveTheDate from "@/components/SaveTheDate/SaveTheDate";
+import InvitationDetails from "@/components/InvitationDetails/InvitationDetails";
 import { useInvitation } from "@/contexts/InvitationContext";
 import { useLoadingState } from "@/hooks/useLoadingState";
 import { useEffect, useState } from "react";
@@ -10,7 +10,7 @@ import { useEffect, useState } from "react";
 export default function Home() {
   const { isLoading } = useLoadingState(3000);
   const { envelopeState } = useInvitation();
-  const [showSaveTheDate, setShowSaveTheDate] = useState(false);
+  const [showInvitationDetails, setShowInvitationDetails] = useState(false);
   const [fadeOut, setFadeOut] = useState(false);
 
   useEffect(() => {
@@ -18,7 +18,7 @@ export default function Home() {
       // Iniciar fade out
       setFadeOut(true);
       setTimeout(() => {
-        setShowSaveTheDate(true);
+        setShowInvitationDetails(true);
       }, 300);
     }
   }, [envelopeState]);
@@ -27,8 +27,8 @@ export default function Home() {
     return <LoadingScreen />;
   }
 
-  if (showSaveTheDate) {
-    return <SaveTheDate />;
+  if (showInvitationDetails) {
+    return <InvitationDetails />;
   }
 
   return (

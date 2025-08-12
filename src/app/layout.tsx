@@ -2,7 +2,29 @@ import type { Metadata, Viewport } from "next";
 import { InvitationProvider } from "@/contexts/InvitationContext";
 import { MusicProvider } from "@/contexts/MusicContext";
 import MusicControlButton from "@/components/shared/MusicControlButton";
+import { Great_Vibes, Montserrat, Playfair_Display } from "next/font/google";
 import "./globals.css";
+
+const greatVibes = Great_Vibes({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-great-vibes",
+});
+
+const montserrat = Montserrat({
+  weight: ["300", "400", "600", "700"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-montserrat",
+});
+
+const playfairDisplay = Playfair_Display({
+  weight: ["400", "700"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-playfair",
+});
 
 export const metadata: Metadata = {
   title: "Johanna & Enrique - Nuestra Boda",
@@ -47,19 +69,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap"
-          rel="stylesheet"
-        />
-      </head>
+    <html
+      lang="es"
+      className={`${greatVibes.variable} ${montserrat.variable} ${playfairDisplay.variable}`}
+    >
       <body className="bg-[#7c9070] antialiased">
         <MusicProvider>
           <InvitationProvider>

@@ -4,14 +4,13 @@ import { useInvitation } from "@/contexts/InvitationContext";
 import { useMusic } from "@/contexts/MusicContext";
 import React, { useEffect, useState } from "react";
 import styles from "./EnvelopeInvitation.module.css";
-import { useRouter } from "next/navigation";
 
 const EnvelopeInvitation: React.FC = () => {
   const { weddingDetails, setEnvelopeOpen } = useInvitation();
   const { toggleMusic } = useMusic();
-  const router = useRouter();
   const [isHovered, setIsHovered] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+
   useEffect(() => {
     // Animación de entrada
     setTimeout(() => {
@@ -21,8 +20,7 @@ const EnvelopeInvitation: React.FC = () => {
   }, []);
 
   const handleContinue = () => {
-    // Ir directamente a la siguiente pantalla
-    router.push("/invitation");
+    // Marcar sobre como abierto para la transición
     setEnvelopeOpen(true);
   };
 
@@ -45,11 +43,11 @@ const EnvelopeInvitation: React.FC = () => {
               {/* Decoración superior */}
               <div className="text-center mb-6">
                 <div className="w-16 h-0.5 bg-[#d4a574] mx-auto mb-4"></div>
-                <h2 className="text-4xl font-script text-[#5a6b50] mb-2">
+                <h2 className="text-4xl font-script text-[#7c9070] mb-2">
                   {weddingDetails.brideName}
                 </h2>
                 <span className="text-2xl font-script text-[#7c9070]">&</span>
-                <h2 className="text-4xl font-script text-[#5a6b50] mt-2">
+                <h2 className="text-4xl font-script text-[#7c9070] mt-2">
                   {weddingDetails.groomName}
                 </h2>
                 <div className="w-16 h-0.5 bg-[#d4a574] mx-auto mt-4"></div>
@@ -62,7 +60,7 @@ const EnvelopeInvitation: React.FC = () => {
                 </p>
                 <p className="text-center text-[#333333] font-sans text-base leading-relaxed">
                   hemos decidido dar el{" "}
-                  <span className="font-semibold text-[#5a6b50]">
+                  <span className="font-semibold text-[#7c9070]">
                     &quot;sí&quot;
                   </span>{" "}
                   definitivo
@@ -83,7 +81,7 @@ const EnvelopeInvitation: React.FC = () => {
                 <p className="text-[#7c9070] font-sans text-xs uppercase tracking-widest mb-1">
                   Save the Date
                 </p>
-                <p className="text-[#5a6b50] font-serif text-xl font-bold">
+                <p className="text-[#7c9070] font-serif text-xl font-bold">
                   {weddingDetails.date}
                 </p>
               </div>
@@ -107,7 +105,7 @@ const EnvelopeInvitation: React.FC = () => {
                     <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
                   </svg>
                   <span className="text-[#fdf6f0] font-sans font-semibold">
-                    Ver Invitación
+                    Abrir Invitación
                   </span>
                 </div>
               </button>
