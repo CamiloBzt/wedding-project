@@ -7,97 +7,169 @@ import styles from "./EnvelopeInvitation.module.css";
 
 const EnvelopeInvitation: React.FC = () => {
   const { weddingDetails, setEnvelopeOpen } = useInvitation();
-  const { toggleMusic } = useMusic();
+  const { isPlaying, isReady, initializeMusic } = useMusic();
   const [isHovered, setIsHovered] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [textAnimationStep, setTextAnimationStep] = useState(0);
 
-  useEffect(() => {
-    // Animación de entrada
-    setTimeout(() => {
-      toggleMusic();
-      setIsVisible(true);
-    }, 100);
-  }, []);
+  const handleContinue = async () => {
+    // Asegurar que la música se inicie al hacer clic
+    if (!isPlaying && isReady) {
+      await initializeMusic();
+    }
 
-  const handleContinue = () => {
     // Marcar sobre como abierto para la transición
     setEnvelopeOpen(true);
   };
 
+  useEffect(() => {
+    // Animación de entrada secuencial
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+
+      // Intentar inicializar música si está lista
+      if (isReady && !isPlaying) {
+        initializeMusic().catch(console.log);
+      }
+
+      // Animar texto paso a paso
+      const textTimer = setInterval(() => {
+        setTextAnimationStep((prev) => {
+          if (prev >= 3) {
+            clearInterval(textTimer);
+            return prev;
+          }
+          return prev + 1;
+        });
+      }, 800);
+
+      return () => clearInterval(textTimer);
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, [isReady, isPlaying, initializeMusic]);
+
   return (
     <div className="invitation-container">
       <div className={`${isVisible ? "animate-fade-in" : "opacity-0"}`}>
-        {/* Sobre realista */}
         <div className={styles.envelopeContainer}>
-          {/* Base del sobre */}
           <div className={styles.envelopeBase}>
-            {/* Carta saliendo del sobre */}
             <div className={styles.letterPeeking}>
-              <div className="bg-wedding-cream p-6 md:p-8 rounded-lg shadow-xl border border-wedding-gold/20">
-                {/* Decoración superior */}
-                <div className="text-center mb-6">
-                  <div className="w-12 h-0.5 bg-wedding-gold mx-auto mb-3"></div>
-                  <h2 className="text-3xl md:text-4xl font-script text-wedding-olive mb-2">
-                    {weddingDetails.brideName}
-                  </h2>
-                  <span className="text-xl font-script text-wedding-olive">
-                    &
-                  </span>
-                  <h2 className="text-3xl md:text-4xl font-script text-wedding-olive mt-1">
-                    {weddingDetails.groomName}
-                  </h2>
-                  <div className="w-12 h-0.5 bg-wedding-gold mx-auto mt-3"></div>
+              <div className="bg-wedding-cream p-6 md:p-8 rounded-lg shadow-xl border border-wedding-gold/20 relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-wedding-gold/5 via-transparent to-wedding-gold/10"></div>
+
+                <div className="text-center mb-6 relative z-10">
+                  <div className="flex items-center justify-center mb-4">
+                    <div className="w-16 h-px bg-gradient-to-r from-transparent via-wedding-gold to-transparent"></div>
+                    <div className="mx-3">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        className="text-wedding-gold"
+                      >
+                        <path
+                          d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </div>
+                    <div className="w-16 h-px bg-gradient-to-r from-transparent via-wedding-gold to-transparent"></div>
+                  </div>
+
+                  <div
+                    className={`transition-all duration-700 ${
+                      textAnimationStep >= 1
+                        ? "opacity-100 translate-y-0"
+                        : "opacity-0 translate-y-4"
+                    }`}
+                  >
+                    <h2 className="text-3xl md:text-4xl font-script text-wedding-olive mb-2 drop-shadow-sm">
+                      {weddingDetails.brideName}
+                    </h2>
+                  </div>
+
+                  <div
+                    className={`transition-all duration-700 delay-300 ${
+                      textAnimationStep >= 2
+                        ? "opacity-100 scale-100"
+                        : "opacity-0 scale-95"
+                    }`}
+                  >
+                    <span className="text-2xl font-script text-wedding-olive inline-block mx-2">
+                      &
+                    </span>
+                  </div>
+
+                  <div
+                    className={`transition-all duration-700 delay-500 ${
+                      textAnimationStep >= 3
+                        ? "opacity-100 translate-y-0"
+                        : "opacity-0 translate-y-4"
+                    }`}
+                  >
+                    <h2 className="text-3xl md:text-4xl font-script text-wedding-olive mt-1 drop-shadow-sm">
+                      {weddingDetails.groomName}
+                    </h2>
+                  </div>
+
+                  <div className="flex items-center justify-center mt-4">
+                    <div className="w-16 h-px bg-gradient-to-r from-transparent via-wedding-gold to-transparent"></div>
+                    <div className="mx-3">
+                      <div className="w-2 h-2 bg-wedding-gold rounded-full"></div>
+                    </div>
+                    <div className="w-16 h-px bg-gradient-to-r from-transparent via-wedding-gold to-transparent"></div>
+                  </div>
                 </div>
 
-                {/* Mensaje principal */}
-                <div className="space-y-3 mb-6">
-                  <p className="text-center text-gray-700 font-sans text-sm md:text-base leading-relaxed">
-                    Después de tantas aventuras juntos,
-                  </p>
-                  <p className="text-center text-gray-700 font-sans text-sm md:text-base leading-relaxed">
-                    hemos decidido dar el{" "}
-                    <span className="font-semibold text-wedding-olive">
-                      &quot;sí&quot;
-                    </span>{" "}
-                    definitivo
-                  </p>
-
-                  <div className="py-2">
-                    <p className="text-center text-gray-600 font-sans text-xs md:text-sm">
-                      Nos encantaría contar con ustedes
+                <div className="space-y-4 mb-6 relative z-10">
+                  <div className="text-center">
+                    <p className="text-gray-700 font-sans text-sm md:text-base leading-relaxed italic">
+                      &quot;Después de caminar juntos por senderos de aventuras,
                     </p>
-                    <p className="text-center text-gray-600 font-sans text-xs md:text-sm">
-                      para celebrar este día tan especial
+                    <p className="text-gray-700 font-sans text-sm md:text-base leading-relaxed italic mb-3">
+                      risas y sueños compartidos...&quot;
+                    </p>
+                  </div>
+
+                  <div className="text-center mt-4">
+                    <p className="text-gray-600 font-sans text-xs md:text-sm leading-relaxed">
+                      Será un honor contar con su compañía para celebrar este
+                      día tan especial.
                     </p>
                   </div>
                 </div>
 
-                {/* Fecha destacada */}
-                <div className="text-center mb-6">
-                  <p className="text-wedding-olive font-serif text-lg md:text-xl font-bold">
-                    {weddingDetails.date}
-                  </p>
-                </div>
-
-                {/* Botón principal */}
                 <button
                   onClick={handleContinue}
                   onMouseEnter={() => setIsHovered(true)}
                   onMouseLeave={() => setIsHovered(false)}
                   className={`${styles.mainButton} ${
                     isHovered ? styles.buttonHovered : ""
-                  }`}
+                  } relative z-10`}
                 >
-                  <div className="flex items-center justify-center gap-2">
-                    <svg
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      className="text-wedding-cream"
-                    >
-                      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-                    </svg>
+                  <div className="flex items-center justify-center gap-3">
+                    <div className="flex">
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        className="text-wedding-cream animate-pulse"
+                      >
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                      </svg>
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        className="text-wedding-cream animate-pulse delay-200 -ml-2"
+                      >
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                      </svg>
+                    </div>
                     <span className="text-wedding-cream font-sans font-semibold text-sm md:text-base">
                       Abrir Invitación
                     </span>
@@ -107,41 +179,53 @@ const EnvelopeInvitation: React.FC = () => {
             </div>
           </div>
 
-          {/* Sombra del sobre */}
           <div className={styles.envelopeShadow}></div>
         </div>
       </div>
 
-      {/* Decoración flotante sutil */}
       <div className={styles.floatingElements}>
-        <div
-          className={styles.floatingHeart}
-          style={{ left: "15%", animationDelay: "0s" }}
-        >
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-            className="text-wedding-gold opacity-20"
+        {[
+          { left: "10%", delay: "0s", size: "18" },
+          { left: "25%", delay: "2s", size: "16" },
+          { left: "75%", delay: "1s", size: "20" },
+          { left: "90%", delay: "3s", size: "14" },
+          { left: "50%", delay: "4s", size: "16" },
+          { left: "65%", delay: "5s", size: "18" },
+        ].map((heart, index) => (
+          <div
+            key={index}
+            className={styles.floatingHeart}
+            style={{
+              left: heart.left,
+              animationDelay: heart.delay,
+              animationDuration: `${12 + index * 2}s`,
+            }}
           >
-            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-          </svg>
-        </div>
-        <div
-          className={styles.floatingHeart}
-          style={{ left: "85%", animationDelay: "3s" }}
-        >
-          <svg
-            width="14"
-            height="14"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-            className="text-wedding-gold opacity-15"
+            <svg
+              width={heart.size}
+              height={heart.size}
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              className="text-wedding-gold opacity-25"
+            >
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+            </svg>
+          </div>
+        ))}
+
+        {[...Array(8)].map((_, index) => (
+          <div
+            key={`particle-${index}`}
+            className={styles.floatingHeart}
+            style={{
+              left: `${15 + index * 10}%`,
+              animationDelay: `${index * 1.5}s`,
+              animationDuration: "15s",
+            }}
           >
-            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-          </svg>
-        </div>
+            <div className="w-1 h-1 bg-wedding-gold rounded-full opacity-30"></div>
+          </div>
+        ))}
       </div>
     </div>
   );

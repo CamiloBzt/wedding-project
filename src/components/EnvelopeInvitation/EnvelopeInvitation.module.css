@@ -1,97 +1,157 @@
-/* Contenedor principal del sobre */
+/* Contenedor principal del sobre con perspectiva mejorada */
 .envelopeContainer {
     position: relative;
     width: 420px;
     height: 280px;
     margin: 0 auto;
     transform-style: preserve-3d;
-    perspective: 1200px;
-    animation: envelopeEntrance 1.2s ease-out;
+    perspective: 1500px;
+    animation: envelopeEntrance 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.25));
 }
 
 @keyframes envelopeEntrance {
-    from {
+    0% {
         opacity: 0;
-        transform: translateY(40px) scale(0.9) rotateY(-5deg);
+        transform: translateY(60px) scale(0.8) rotateY(-10deg) rotateX(10deg);
+        filter: blur(8px);
     }
 
-    to {
+    50% {
+        opacity: 0.7;
+        transform: translateY(20px) scale(0.95) rotateY(-3deg) rotateX(3deg);
+        filter: blur(2px);
+    }
+
+    100% {
         opacity: 1;
-        transform: translateY(0) scale(1) rotateY(0deg);
+        transform: translateY(0) scale(1) rotateY(0deg) rotateX(0deg);
+        filter: blur(0px);
     }
 }
 
-/* Base del sobre */
+/* Base del sobre con textura mejorada */
 .envelopeBase {
     position: absolute;
     width: 100%;
     height: 200px;
-    bottom: -150px;
-    background: linear-gradient(135deg, #f8f4f0 0%, #f0e8dc 50%, #eee0d0 100%);
-    border-radius: 6px;
+    bottom: -260px;
+    background: linear-gradient(145deg,
+            #f8f4f0 0%,
+            #f0e8dc 25%,
+            #eee0d0 50%,
+            #e8d5c0 75%,
+            #e0c8a8 100%);
+    border-radius: 8px;
     box-shadow:
-        0 8px 25px rgba(0, 0, 0, 0.15),
-        0 4px 10px rgba(0, 0, 0, 0.1),
-        inset 0 1px 0 rgba(255, 255, 255, 0.3);
-    border: 1px solid rgba(220, 200, 180, 0.8);
+        0 15px 35px rgba(0, 0, 0, 0.2),
+        0 8px 15px rgba(0, 0, 0, 0.15),
+        inset 0 2px 0 rgba(255, 255, 255, 0.4),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(220, 200, 180, 0.9);
     z-index: 2;
     overflow: visible;
+    position: relative;
 }
 
+.envelopeBase::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(0, 0, 0, 0.05) 0%, transparent 50%);
+    border-radius: inherit;
+    pointer-events: none;
+}
 
-/* Carta asomando del sobre */
+/* Carta con animación de flotación mejorada */
 .letterPeeking {
     position: absolute;
     width: 85%;
     left: 7.5%;
-    top: -20rem;
+    top: -50rem;
     z-index: 10;
-    animation: letterFloat 4s ease-in-out infinite;
+    animation: letterFloatEnhanced 6s ease-in-out infinite;
     transform-origin: bottom center;
+    filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.15));
 }
 
-@keyframes letterFloat {
+@keyframes letterFloatEnhanced {
 
     0%,
     100% {
-        transform: translateY(0) rotate(0deg);
+        transform: translateY(0) rotate(0deg) scale(1);
+    }
+
+    25% {
+        transform: translateY(-6px) rotate(0.3deg) scale(1.01);
     }
 
     50% {
-        transform: translateY(-8px) rotate(0.5deg);
+        transform: translateY(-12px) rotate(0deg) scale(1.02);
+    }
+
+    75% {
+        transform: translateY(-6px) rotate(-0.3deg) scale(1.01);
     }
 }
 
-
-
-/* Sombra realista del sobre */
+/* Sombra realista mejorada */
 .envelopeShadow {
     position: absolute;
-    bottom: -15px;
-    left: 10%;
-    right: 10%;
-    height: 20px;
-    background: radial-gradient(ellipse, rgba(0, 0, 0, 0.2) 0%, transparent 70%);
+    bottom: -20px;
+    left: 8%;
+    right: 8%;
+    height: 25px;
+    background:
+        radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.1) 50%, transparent 100%);
     border-radius: 50%;
     z-index: 0;
-    filter: blur(8px);
+    filter: blur(12px);
+    animation: shadowPulse 6s ease-in-out infinite;
 }
 
-/* Botón principal */
+@keyframes shadowPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+}
+
+/* Botón principal con efectos avanzados */
 .mainButton {
     width: 100%;
-    padding: 12px 20px;
-    background: linear-gradient(135deg, #7c9070 0%, #8fa082 50%, #7c9070 100%);
-    border-radius: 30px;
+    padding: 14px 24px;
+    background: linear-gradient(135deg,
+            #7c9070 0%,
+            #8fa082 25%,
+            #9fb094 50%,
+            #8fa082 75%,
+            #7c9070 100%);
+    border-radius: 35px;
     border: none;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow:
-        0 4px 15px rgba(124, 144, 112, 0.3),
-        0 2px 8px rgba(124, 144, 112, 0.2);
+        0 6px 20px rgba(124, 144, 112, 0.4),
+        0 3px 12px rgba(124, 144, 112, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
     position: relative;
     overflow: hidden;
     transform: translateZ(0);
+    font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
 .mainButton::before {
@@ -101,38 +161,69 @@
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-    transition: left 0.6s ease;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.4),
+            rgba(255, 255, 255, 0.6),
+            rgba(255, 255, 255, 0.4),
+            transparent);
+    transition: left 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mainButton::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .mainButton:hover::before {
     left: 100%;
 }
 
+.mainButton:hover::after {
+    opacity: 1;
+}
+
 .mainButton:hover {
-    transform: translateY(-2px) scale(1.02);
+    transform: translateY(-3px) scale(1.02);
     box-shadow:
-        0 8px 25px rgba(124, 144, 112, 0.4),
-        0 4px 15px rgba(124, 144, 112, 0.3);
+        0 12px 35px rgba(124, 144, 112, 0.5),
+        0 6px 20px rgba(124, 144, 112, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.mainButton:active {
+    transform: translateY(-1px) scale(1.01);
+    transition: all 0.1s ease;
 }
 
 .buttonHovered {
-    animation: gentlePulse 2s ease-in-out infinite;
+    animation: gentlePulseEnhanced 2.5s ease-in-out infinite;
 }
 
-@keyframes gentlePulse {
+@keyframes gentlePulseEnhanced {
 
     0%,
     100% {
         transform: scale(1);
+        box-shadow:
+            0 6px 20px rgba(124, 144, 112, 0.4),
+            0 3px 12px rgba(124, 144, 112, 0.3);
     }
 
     50% {
-        transform: scale(1.03);
+        transform: scale(1.05);
+        box-shadow:
+            0 10px 30px rgba(124, 144, 112, 0.5),
+            0 5px 18px rgba(124, 144, 112, 0.4);
     }
 }
 
-/* Elementos flotantes */
+/* Elementos flotantes mejorados */
 .floatingElements {
     position: absolute;
     width: 100%;
@@ -145,34 +236,60 @@
 
 .floatingHeart {
     position: absolute;
-    animation: floatUp 12s ease-in-out infinite;
+    animation: floatUpEnhanced 15s linear infinite;
+    opacity: 0;
 }
 
-@keyframes floatUp {
+@keyframes floatUpEnhanced {
     0% {
-        transform: translateY(100vh) rotate(0deg) scale(0.8);
+        transform: translateY(100vh) rotate(0deg) scale(0.5);
         opacity: 0;
+    }
+
+    5% {
+        opacity: 0.8;
     }
 
     10% {
-        opacity: 0.6;
+        transform: translateY(90vh) rotate(45deg) scale(0.8);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateY(50vh) rotate(180deg) scale(1.2);
+        opacity: 0.7;
     }
 
     90% {
-        opacity: 0.6;
+        transform: translateY(10vh) rotate(315deg) scale(1.5);
+        opacity: 0.3;
     }
 
     100% {
-        transform: translateY(-100vh) rotate(360deg) scale(1.2);
+        transform: translateY(-10vh) rotate(360deg) scale(0.8);
         opacity: 0;
     }
 }
 
-/* Responsive Design */
+/* Animaciones adicionales para partículas */
+.floatingHeart:nth-child(even) {
+    animation-direction: reverse;
+}
+
+.floatingHeart:nth-child(3n) {
+    animation-duration: 18s;
+}
+
+.floatingHeart:nth-child(4n) {
+    animation-duration: 12s;
+}
+
+/* Responsive Design mejorado */
 @media (max-width: 768px) {
     .envelopeContainer {
         width: 350px;
         height: 240px;
+        perspective: 1200px;
     }
 
     .letterPeeking {
@@ -180,21 +297,61 @@
         width: 88%;
         left: 6%;
     }
+
+    .mainButton {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
 }
 
 @media (max-width: 480px) {
     .envelopeContainer {
         width: 300px;
         height: 200px;
+        perspective: 1000px;
     }
 
     .envelopeBase {
         height: 160px;
+        bottom: -200px;
     }
 
     .letterPeeking {
-        top: -365px;
+        top: -330px;
         width: 90%;
         left: 5%;
+    }
+
+    .mainButton {
+        padding: 10px 18px;
+        font-size: 13px;
+        border-radius: 30px;
+    }
+}
+
+/* Mejoras para accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+
+    .envelopeContainer,
+    .letterPeeking,
+    .floatingHeart,
+    .mainButton {
+        animation: none;
+    }
+
+    .mainButton:hover {
+        transform: none;
+    }
+}
+
+/* Efectos adicionales para pantallas grandes */
+@media (min-width: 1200px) {
+    .envelopeContainer {
+        width: 480px;
+        height: 320px;
+    }
+
+    .letterPeeking {
+        top: -22rem;
     }
 }
