@@ -5,6 +5,7 @@ import FloralDecoration from "@/components/shared/FloralDecoration";
 import HeartIcon from "@/components/shared/HeartIcon";
 import { useWeddingDetails } from "@/contexts/InvitationContext";
 import React, { useEffect, useState } from "react";
+import { QRPhotoSection } from "../GenerateQRUrl/GenerateQRUrl";
 import MusicControlButton from "../shared/MusicControlButton";
 import styles from "./InvitationDetails.module.css";
 
@@ -127,17 +128,25 @@ const InvitationDetails: React.FC = () => {
       },
     },
     {
-      id: "photos",
-      title: "Fotos",
+      id: "photos-qr",
+      title: "Comparte tus fotos",
       icon: "📸",
       content: {
-        compartir: "Comparte tus fotos y videos",
+        instruccion: "Escanea el código QR para subir tus fotos y videos",
+        drive_url:
+          "https://drive.google.com/drive/folders/1VtRG4Yc1egkPu831W4r62eauCiirY_3d?usp=sharing",
         hashtag: weddingDetails.hashtag || "#JohannaYEnrique2025",
-        instrucción: "Usa nuestro hashtag en redes sociales",
-        galería: "Galería disponible después del evento",
+        nota: "También puedes usar nuestro hashtag en redes sociales",
       },
     },
   ];
+
+  const googleFormUrl =
+    "https://docs.google.com/forms/d/e/1FAIpQLSf2CQ63prRAj9YSw4sOdV0rITH2H_wXlAB0rPX33XUWXj-EOA/viewform";
+
+  const handleConfirmAttendance = () => {
+    window.open(googleFormUrl, "_blank");
+  };
 
   useEffect(() => {
     setTimeout(() => setIsVisible(true), 100);
@@ -349,22 +358,10 @@ const InvitationDetails: React.FC = () => {
             )}
 
             {activeSection === 5 && (
-              <div className="mt-6 p-4 bg-wedding-cream/50 rounded-lg">
-                <h4 className="text-lg font-serif text-wedding-olive mb-3">
-                  ¡Captura cada momento!
-                </h4>
-                <div className="text-center">
-                  <div className="w-32 h-32 mx-auto mb-4 bg-wedding-olive/20 rounded-lg flex items-center justify-center">
-                    <span className="text-4xl">📱</span>
-                  </div>
-                  <p className="text-wedding-olive font-semibold text-lg mb-2">
-                    {weddingDetails.hashtag}
-                  </p>
-                  <p className="text-sm text-wedding-olive/70">
-                    Usa este hashtag para que podamos ver todas tus fotos
-                  </p>
-                </div>
-              </div>
+              <QRPhotoSection
+                driveUrl={sections[activeSection].content.drive_url ?? ""}
+                hashtag={sections[activeSection].content.hashtag ?? ""}
+              />
             )}
           </div>
         </div>
@@ -392,7 +389,10 @@ const InvitationDetails: React.FC = () => {
         </div>
 
         <div className={styles.actions}>
-          <button className={styles.confirmButton}>
+          <button
+            onClick={handleConfirmAttendance}
+            className={styles.confirmButton}
+          >
             <HeartIcon size={20} className="mr-2" />
             Confirmar Asistencia
           </button>
