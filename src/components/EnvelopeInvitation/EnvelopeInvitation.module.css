@@ -1,96 +1,131 @@
-.envelopeOpen {
-    width: 380px;
-    min-height: 450px;
+/* Contenedor principal del sobre */
+.envelopeContainer {
     position: relative;
+    width: 420px;
+    height: 280px;
+    margin: 0 auto;
     transform-style: preserve-3d;
-    perspective: 1000px;
-    animation: envelopeEntrance 1s ease-out;
+    perspective: 1200px;
+    animation: envelopeEntrance 1.2s ease-out;
 }
 
 @keyframes envelopeEntrance {
     from {
         opacity: 0;
-        transform: translateY(30px) scale(0.95);
+        transform: translateY(40px) scale(0.9) rotateY(-5deg);
     }
 
     to {
         opacity: 1;
-        transform: translateY(0) scale(1);
+        transform: translateY(0) scale(1) rotateY(0deg);
     }
 }
 
-.envelopeBackOpen {
+/* Base del sobre */
+.envelopeBase {
     position: absolute;
     width: 100%;
     height: 200px;
-    bottom: 0;
-    background: linear-gradient(135deg, #fdf6f0 0%, #f5e6d8 100%);
-    border-radius: 8px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-    border: 1px solid #e5d5c8;
-    z-index: 1;
+    bottom: -150px;
+    background: linear-gradient(135deg, #f8f4f0 0%, #f0e8dc 50%, #eee0d0 100%);
+    border-radius: 6px;
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.15),
+        0 4px 10px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(220, 200, 180, 0.8);
+    z-index: 2;
+    overflow: visible;
 }
 
-.envelopeFlapOpen {
+/* Solapa trasera del sobre */
+.envelopeBackFlap {
     position: absolute;
-    top: -120px;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    height: 0;
+    width: 0;
+    border-left: 211px solid transparent;
+    border-right: 211px solid transparent;
+    border-top: 140px solid #e8dcc8;
+    border-radius: 6px 6px 0 0;
+    z-index: 1;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
+    transform-origin: bottom center;
+}
+
+/* Solapa frontal abierta */
+.envelopeFrontFlap {
+    position: absolute;
+    top: -139px;
     left: 0;
     right: 0;
     height: 0;
     width: 0;
-    border-left: 190px solid transparent;
-    border-right: 190px solid transparent;
-    border-bottom: 120px solid #f5e6d8;
+    border-left: 210px solid transparent;
+    border-right: 210px solid transparent;
+    border-bottom: 140px solid #f2e6d8;
     transform-origin: bottom center;
-    transform: rotateX(180deg);
-    z-index: 0;
-    filter: drop-shadow(0 -5px 10px rgba(0, 0, 0, 0.1));
+    transform: rotateX(-160deg);
+    z-index: 3;
+    filter: drop-shadow(0 -3px 12px rgba(0, 0, 0, 0.15));
+    box-shadow: inset 0 -2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.letterVisible {
+/* Carta asomando del sobre */
+.letterPeeking {
     position: absolute;
-    width: 90%;
-    left: 5%;
-    top: -30px;
+    width: 85%;
+    left: 7.5%;
+    top: -20rem;
     z-index: 10;
-    animation: letterFloat 3s ease-in-out infinite;
+    animation: letterFloat 4s ease-in-out infinite;
+    transform-origin: bottom center;
 }
 
 @keyframes letterFloat {
 
     0%,
     100% {
-        transform: translateY(0);
+        transform: translateY(0) rotate(0deg);
     }
 
     50% {
-        transform: translateY(-5px);
+        transform: translateY(-8px) rotate(0.5deg);
     }
 }
 
-.envelopeFrontOpen {
+
+
+/* Sombra realista del sobre */
+.envelopeShadow {
     position: absolute;
-    width: 100%;
-    height: 120px;
-    bottom: 0;
-    background: linear-gradient(135deg, #fdf6f0 0%, #f5e6d8 100%);
-    border-radius: 0 0 8px 8px;
-    z-index: 2;
-    border-top: 1px solid #e5d5c8;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05);
+    bottom: -15px;
+    left: 10%;
+    right: 10%;
+    height: 20px;
+    background: radial-gradient(ellipse, rgba(0, 0, 0, 0.2) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 0;
+    filter: blur(8px);
 }
 
+/* Botón principal */
 .mainButton {
     width: 100%;
-    padding: 16px 24px;
-    background: linear-gradient(135deg, #7c9070 0%, #a3b899 100%);
-    border-radius: 50px;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #7c9070 0%, #8fa082 50%, #7c9070 100%);
+    border-radius: 30px;
     border: none;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(124, 144, 112, 0.3);
+    box-shadow:
+        0 4px 15px rgba(124, 144, 112, 0.3),
+        0 2px 8px rgba(124, 144, 112, 0.2);
     position: relative;
     overflow: hidden;
+    transform: translateZ(0);
 }
 
 .mainButton::before {
@@ -100,8 +135,8 @@
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: left 0.5s ease;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.6s ease;
 }
 
 .mainButton:hover::before {
@@ -109,12 +144,14 @@
 }
 
 .mainButton:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(124, 144, 112, 0.4);
+    transform: translateY(-2px) scale(1.02);
+    box-shadow:
+        0 8px 25px rgba(124, 144, 112, 0.4),
+        0 4px 15px rgba(124, 144, 112, 0.3);
 }
 
 .buttonHovered {
-    animation: gentlePulse 1.5s ease-in-out infinite;
+    animation: gentlePulse 2s ease-in-out infinite;
 }
 
 @keyframes gentlePulse {
@@ -125,58 +162,99 @@
     }
 
     50% {
-        transform: scale(1.02);
+        transform: scale(1.03);
     }
 }
 
+/* Elementos flotantes */
 .floatingElements {
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     pointer-events: none;
     overflow: hidden;
+    top: 0;
+    left: 0;
 }
 
 .floatingHeart {
     position: absolute;
-    animation: floatUp 8s ease-in-out infinite;
+    animation: floatUp 12s ease-in-out infinite;
 }
 
 @keyframes floatUp {
     0% {
-        transform: translateY(100vh) rotate(0deg);
+        transform: translateY(100vh) rotate(0deg) scale(0.8);
         opacity: 0;
     }
 
     10% {
-        opacity: 0.2;
+        opacity: 0.6;
     }
 
     90% {
-        opacity: 0.2;
+        opacity: 0.6;
     }
 
     100% {
-        transform: translateY(-100vh) rotate(360deg);
+        transform: translateY(-100vh) rotate(360deg) scale(1.2);
         opacity: 0;
     }
 }
 
-/* Responsive */
-@media (max-width: 640px) {
-    .envelopeOpen {
-        width: 320px;
-        min-height: 400px;
+/* Responsive Design */
+@media (max-width: 768px) {
+    .envelopeContainer {
+        width: 350px;
+        height: 240px;
     }
 
-    .envelopeFlapOpen {
-        border-left-width: 160px;
-        border-right-width: 160px;
+    .envelopeBackFlap {
+        border-left-width: 176px;
+        border-right-width: 176px;
+        border-top-width: 120px;
+    }
+
+    .envelopeFrontFlap {
+        border-left-width: 175px;
+        border-right-width: 175px;
+        border-bottom-width: 120px;
+        top: -119px;
+    }
+
+    .letterPeeking {
+        top: -270px;
+        width: 88%;
+        left: 6%;
+    }
+}
+
+@media (max-width: 480px) {
+    .envelopeContainer {
+        width: 300px;
+        height: 200px;
+    }
+
+    .envelopeBase {
+        height: 160px;
+    }
+
+    .envelopeBackFlap {
+        border-left-width: 151px;
+        border-right-width: 151px;
+        border-top-width: 100px;
+    }
+
+    .envelopeFrontFlap {
+        border-left-width: 150px;
+        border-right-width: 150px;
         border-bottom-width: 100px;
-        top: -100px;
+        top: -99px;
     }
 
-    .letterVisible {
-        top: -20px;
+    .letterPeeking {
+        top: -365px;
+        width: 90%;
+        left: 5%;
     }
 }

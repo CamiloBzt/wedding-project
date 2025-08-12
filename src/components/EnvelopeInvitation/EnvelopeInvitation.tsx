@@ -26,134 +26,121 @@ const EnvelopeInvitation: React.FC = () => {
 
   return (
     <div className="invitation-container">
-      <div
-        className={`relative ${isVisible ? "animate-fade-in" : "opacity-0"}`}
-      >
-        {/* Sobre abierto con carta visible */}
-        <div className={styles.envelopeOpen}>
-          {/* Parte trasera del sobre (base) */}
-          <div className={styles.envelopeBackOpen}>
-            {/* Solapa abierta */}
-            <div className={styles.envelopeFlapOpen}></div>
-          </div>
+      <div className={`${isVisible ? "animate-fade-in" : "opacity-0"}`}>
+        {/* Sobre realista */}
+        <div className={styles.envelopeContainer}>
+          {/* Base del sobre */}
+          <div className={styles.envelopeBase}>
+            {/* Solapa frontal abierta */}
+            <div className={styles.envelopeFrontFlap}></div>
 
-          {/* Carta visible (fuera del sobre) */}
-          <div className={styles.letterVisible}>
-            <div className="bg-[#fdf6f0] p-8 rounded-lg shadow-2xl">
-              {/* Decoración superior */}
-              <div className="text-center mb-6">
-                <div className="w-16 h-0.5 bg-[#d4a574] mx-auto mb-4"></div>
-                <h2 className="text-4xl font-script text-[#7c9070] mb-2">
-                  {weddingDetails.brideName}
-                </h2>
-                <span className="text-2xl font-script text-[#7c9070]">&</span>
-                <h2 className="text-4xl font-script text-[#7c9070] mt-2">
-                  {weddingDetails.groomName}
-                </h2>
-                <div className="w-16 h-0.5 bg-[#d4a574] mx-auto mt-4"></div>
-              </div>
-
-              {/* Mensaje principal */}
-              <div className="space-y-4 mb-8">
-                <p className="text-center text-[#333333] font-sans text-base leading-relaxed">
-                  Después de tantas aventuras juntos,
-                </p>
-                <p className="text-center text-[#333333] font-sans text-base leading-relaxed">
-                  hemos decidido dar el{" "}
-                  <span className="font-semibold text-[#7c9070]">
-                    &quot;sí&quot;
-                  </span>{" "}
-                  definitivo
-                </p>
-
-                <div className="py-4">
-                  <p className="text-center text-[#333333] font-sans text-sm">
-                    Nos encantaría contar con ustedes
-                  </p>
-                  <p className="text-center text-[#333333] font-sans text-sm">
-                    para celebrar este día tan especial
-                  </p>
-                </div>
-              </div>
-
-              {/* Fecha destacada */}
-              <div className="text-center mb-8">
-                <p className="text-[#7c9070] font-sans text-xs uppercase tracking-widest mb-1">
-                  Save the Date
-                </p>
-                <p className="text-[#7c9070] font-serif text-xl font-bold">
-                  {weddingDetails.date}
-                </p>
-              </div>
-
-              {/* Botón principal */}
-              <button
-                onClick={handleContinue}
-                onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={() => setIsHovered(false)}
-                className={`${styles.mainButton} ${
-                  isHovered ? styles.buttonHovered : ""
-                }`}
-              >
-                <div className="flex items-center justify-center gap-2">
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="#fdf6f0"
-                  >
-                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-                  </svg>
-                  <span className="text-[#fdf6f0] font-sans font-semibold">
-                    Abrir Invitación
+            {/* Carta saliendo del sobre */}
+            <div className={styles.letterPeeking}>
+              <div className="bg-wedding-cream p-6 md:p-8 rounded-lg shadow-xl border border-wedding-gold/20">
+                {/* Decoración superior */}
+                <div className="text-center mb-6">
+                  <div className="w-12 h-0.5 bg-wedding-gold mx-auto mb-3"></div>
+                  <h2 className="text-3xl md:text-4xl font-script text-wedding-olive mb-2">
+                    {weddingDetails.brideName}
+                  </h2>
+                  <span className="text-xl font-script text-wedding-olive">
+                    &
                   </span>
+                  <h2 className="text-3xl md:text-4xl font-script text-wedding-olive mt-1">
+                    {weddingDetails.groomName}
+                  </h2>
+                  <div className="w-12 h-0.5 bg-wedding-gold mx-auto mt-3"></div>
                 </div>
-              </button>
-            </div>
-          </div>
 
-          {/* Parte frontal del sobre (decorativa) */}
-          <div className={styles.envelopeFrontOpen}>
-            <div className="h-full flex items-end justify-center pb-4">
-              <div className="text-center">
-                <p className="font-script text-2xl text-[#7c9070]/50">
-                  Para: Nuestros queridos invitados
-                </p>
+                {/* Mensaje principal */}
+                <div className="space-y-3 mb-6">
+                  <p className="text-center text-gray-700 font-sans text-sm md:text-base leading-relaxed">
+                    Después de tantas aventuras juntos,
+                  </p>
+                  <p className="text-center text-gray-700 font-sans text-sm md:text-base leading-relaxed">
+                    hemos decidido dar el{" "}
+                    <span className="font-semibold text-wedding-olive">
+                      &quot;sí&quot;
+                    </span>{" "}
+                    definitivo
+                  </p>
+
+                  <div className="py-2">
+                    <p className="text-center text-gray-600 font-sans text-xs md:text-sm">
+                      Nos encantaría contar con ustedes
+                    </p>
+                    <p className="text-center text-gray-600 font-sans text-xs md:text-sm">
+                      para celebrar este día tan especial
+                    </p>
+                  </div>
+                </div>
+
+                {/* Fecha destacada */}
+                <div className="text-center mb-6">
+                  <p className="text-wedding-olive font-serif text-lg md:text-xl font-bold">
+                    {weddingDetails.date}
+                  </p>
+                </div>
+
+                {/* Botón principal */}
+                <button
+                  onClick={handleContinue}
+                  onMouseEnter={() => setIsHovered(true)}
+                  onMouseLeave={() => setIsHovered(false)}
+                  className={`${styles.mainButton} ${
+                    isHovered ? styles.buttonHovered : ""
+                  }`}
+                >
+                  <div className="flex items-center justify-center gap-2">
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      className="text-wedding-cream"
+                    >
+                      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                    </svg>
+                    <span className="text-wedding-cream font-sans font-semibold text-sm md:text-base">
+                      Abrir Invitación
+                    </span>
+                  </div>
+                </button>
               </div>
             </div>
           </div>
-        </div>
 
-        {/* Sombras decorativas */}
-        <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 w-4/5 h-12 bg-black/10 blur-2xl rounded-full"></div>
+          {/* Sombra del sobre */}
+          <div className={styles.envelopeShadow}></div>
+        </div>
       </div>
 
-      {/* Decoración flotante */}
+      {/* Decoración flotante sutil */}
       <div className={styles.floatingElements}>
         <div
           className={styles.floatingHeart}
-          style={{ left: "10%", animationDelay: "0s" }}
+          style={{ left: "15%", animationDelay: "0s" }}
         >
           <svg
-            width="20"
-            height="20"
+            width="16"
+            height="16"
             viewBox="0 0 24 24"
-            fill="#d4a574"
-            opacity="0.2"
+            fill="currentColor"
+            className="text-wedding-gold opacity-20"
           >
             <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
           </svg>
         </div>
         <div
           className={styles.floatingHeart}
-          style={{ left: "85%", animationDelay: "2s" }}
+          style={{ left: "85%", animationDelay: "3s" }}
         >
           <svg
-            width="16"
-            height="16"
+            width="14"
+            height="14"
             viewBox="0 0 24 24"
-            fill="#d4a574"
-            opacity="0.15"
+            fill="currentColor"
+            className="text-wedding-gold opacity-15"
           >
             <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
           </svg>
