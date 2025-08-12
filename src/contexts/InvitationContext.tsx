@@ -2,7 +2,6 @@
 
 import React, { createContext, useContext, useState, ReactNode } from "react";
 
-// Tipos
 export interface WeddingDetails {
   groomName: string;
   brideName: string;
@@ -34,7 +33,6 @@ interface InvitationContextType {
   updateConfirmation: (confirmed: boolean, guests: number) => void;
 }
 
-// Datos de la boda
 const WEDDING_INFO: WeddingDetails = {
   groomName: "Enrique",
   brideName: "Johanna",
@@ -45,12 +43,10 @@ const WEDDING_INFO: WeddingDetails = {
   hashtag: "#JohannaYEnrique2025",
 };
 
-// Crear el contexto
 const InvitationContext = createContext<InvitationContextType | undefined>(
   undefined
 );
 
-// Provider del contexto
 export function InvitationProvider({ children }: { children: ReactNode }) {
   const [envelopeState, setEnvelopeState] = useState<EnvelopeState>({
     isOpen: false,
@@ -65,7 +61,6 @@ export function InvitationProvider({ children }: { children: ReactNode }) {
       isAnimating: true,
     });
 
-    // Resetear animación después de completarse
     setTimeout(() => {
       setEnvelopeState((prev) => ({ ...prev, isAnimating: false }));
     }, 1500);
@@ -95,7 +90,6 @@ export function InvitationProvider({ children }: { children: ReactNode }) {
   );
 }
 
-// Hook personalizado para usar el contexto
 export const useInvitation = () => {
   const context = useContext(InvitationContext);
   if (!context) {
@@ -106,19 +100,16 @@ export const useInvitation = () => {
   return context;
 };
 
-// Hook para obtener solo los detalles de la boda
 export const useWeddingDetails = () => {
   const { weddingDetails } = useInvitation();
   return weddingDetails;
 };
 
-// Hook para manejar el estado del sobre
 export const useEnvelope = () => {
   const { envelopeState, setEnvelopeOpen } = useInvitation();
   return { ...envelopeState, setOpen: setEnvelopeOpen };
 };
 
-// Hook para manejar información del invitado
 export const useGuest = () => {
   const { guestInfo, setGuestInfo, updateConfirmation } = useInvitation();
   return { guestInfo, setGuestInfo, updateConfirmation };

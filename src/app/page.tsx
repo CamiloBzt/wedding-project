@@ -15,7 +15,6 @@ export default function Home() {
 
   useEffect(() => {
     if (envelopeState.isOpen && !envelopeState.isAnimating) {
-      // Iniciar fade out
       setFadeOut(true);
       setTimeout(() => {
         setShowInvitationDetails(true);

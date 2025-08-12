@@ -5,9 +5,9 @@ import FloralDecoration from "@/components/shared/FloralDecoration";
 import HeartIcon from "@/components/shared/HeartIcon";
 import { useWeddingDetails } from "@/contexts/InvitationContext";
 import React, { useEffect, useState } from "react";
+import MusicControlButton from "../shared/MusicControlButton";
 import styles from "./InvitationDetails.module.css";
 
-// Componente de cuenta regresiva
 const CountdownTimer: React.FC<{ targetDate: string }> = ({ targetDate }) => {
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
@@ -150,13 +150,10 @@ const InvitationDetails: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-wedding-olive relative overflow-hidden">
-      {/* Flores de fondo distribuidas por toda la página */}
       <div className="fixed inset-0 pointer-events-none z-0">
-        {/* Hero section flores */}
         <FloralDecoration position="top-left" size="large" opacity={0.15} />
         <FloralDecoration position="top-right" size="large" opacity={0.12} />
 
-        {/* Flores medianas dispersas */}
         <div className="absolute top-32 left-1/4 transform -translate-x-1/2">
           <FloralDecoration size="medium" opacity={0.08} />
         </div>
@@ -164,7 +161,6 @@ const InvitationDetails: React.FC = () => {
           <FloralDecoration size="small" opacity={0.1} />
         </div>
 
-        {/* Flores en el área del contenido */}
         <div className="absolute top-1/2 left-8 transform -translate-y-1/2">
           <FloralDecoration size="medium" opacity={0.06} />
         </div>
@@ -172,7 +168,6 @@ const InvitationDetails: React.FC = () => {
           <FloralDecoration size="small" opacity={0.08} />
         </div>
 
-        {/* Flores en área de navegación */}
         <div className="absolute top-2/3 left-1/6">
           <FloralDecoration size="small" opacity={0.07} />
         </div>
@@ -180,7 +175,6 @@ const InvitationDetails: React.FC = () => {
           <FloralDecoration size="medium" opacity={0.09} />
         </div>
 
-        {/* Flores en timeline */}
         <div className="absolute bottom-1/3 left-1/3">
           <FloralDecoration size="small" opacity={0.06} />
         </div>
@@ -188,11 +182,9 @@ const InvitationDetails: React.FC = () => {
           <FloralDecoration size="medium" opacity={0.08} />
         </div>
 
-        {/* Flores en footer */}
         <FloralDecoration position="bottom-left" size="medium" opacity={0.1} />
         <FloralDecoration position="bottom-right" size="large" opacity={0.12} />
 
-        {/* Flores adicionales para más densidad */}
         <div className="absolute top-1/4 left-12">
           <FloralDecoration size="small" opacity={0.05} />
         </div>
@@ -207,7 +199,6 @@ const InvitationDetails: React.FC = () => {
         </div>
       </div>
 
-      {/* Header sticky simplificado */}
       <header className="sticky top-0 z-50 bg-wedding-olive/95 backdrop-blur-sm border-b border-wedding-gold/20 py-3">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <div className="flex items-center justify-center gap-2">
@@ -219,16 +210,13 @@ const InvitationDetails: React.FC = () => {
         </div>
       </header>
 
-      {/* Hero Section integrado al fondo */}
       <div className="relative py-20 text-center overflow-hidden z-10">
-        {/* SAVE THE DATE de fondo */}
         <div className="absolute inset-0 flex items-center justify-center opacity-8">
           <h1 className="text-[8rem] md:text-[12rem] font-bold text-wedding-gold tracking-widest transform -rotate-12 select-none">
             SAVE THE DATE
           </h1>
         </div>
 
-        {/* Flores adicionales específicas del hero */}
         <div className="absolute top-16 left-16 z-5">
           <FloralDecoration size="medium" opacity={0.2} />
         </div>
@@ -247,14 +235,12 @@ const InvitationDetails: React.FC = () => {
             isVisible ? "animate-fade-in" : "opacity-0"
           }`}
         >
-          {/* Nombres principales */}
           <AnimatedText
             text={`${weddingDetails.brideName} & ${weddingDetails.groomName}`}
             className="text-6xl md:text-7xl font-script text-wedding-gold mb-8 drop-shadow-lg"
             delay={0}
           />
 
-          {/* Línea divisoria con corazón */}
           <div className="flex items-center justify-center gap-4 mb-8">
             <div className="h-px bg-wedding-gold/50 w-24"></div>
             <HeartIcon
@@ -265,20 +251,17 @@ const InvitationDetails: React.FC = () => {
             <div className="h-px bg-wedding-gold/50 w-24"></div>
           </div>
 
-          {/* Fecha */}
           <AnimatedText
             text={weddingDetails.date}
             className="text-2xl font-serif text-wedding-gold/90 mb-12 drop-shadow-sm"
             delay={200}
           />
 
-          {/* Contador de días sin recuadros */}
           <CountdownTimer targetDate="2025-10-25" />
         </div>
       </div>
 
       <div className={`${styles.container} relative z-10`}>
-        {/* Flores adicionales en la sección de contenido */}
         <div className="absolute top-8 right-8 z-5">
           <FloralDecoration size="small" opacity={0.12} />
         </div>
@@ -286,7 +269,6 @@ const InvitationDetails: React.FC = () => {
           <FloralDecoration size="medium" opacity={0.1} />
         </div>
 
-        {/* Navegación de secciones */}
         <div className={styles.navigation}>
           {sections.map((section, index) => (
             <button
@@ -304,7 +286,6 @@ const InvitationDetails: React.FC = () => {
           ))}
         </div>
 
-        {/* Contenido de la sección activa */}
         <div className={styles.content}>
           <div className={styles.sectionCard}>
             <h2 className="text-3xl font-serif text-wedding-olive mb-6">
@@ -324,8 +305,7 @@ const InvitationDetails: React.FC = () => {
               )}
             </div>
 
-            {/* Información adicional específica por sección */}
-            {activeSection === 3 && ( // Tips
+            {activeSection === 3 && (
               <div className="mt-6 p-4 bg-wedding-olive/10 rounded-lg">
                 <h4 className="text-lg font-serif text-wedding-olive mb-3">
                   Consejos importantes:
@@ -342,7 +322,7 @@ const InvitationDetails: React.FC = () => {
               </div>
             )}
 
-            {activeSection === 4 && ( // Regalos
+            {activeSection === 4 && (
               <div className="mt-6 p-4 bg-wedding-gold/10 rounded-lg">
                 <h4 className="text-lg font-serif text-wedding-olive mb-3">
                   Opciones para regalos:
@@ -368,7 +348,7 @@ const InvitationDetails: React.FC = () => {
               </div>
             )}
 
-            {activeSection === 5 && ( // Fotos
+            {activeSection === 5 && (
               <div className="mt-6 p-4 bg-wedding-cream/50 rounded-lg">
                 <h4 className="text-lg font-serif text-wedding-olive mb-3">
                   ¡Captura cada momento!
@@ -389,9 +369,7 @@ const InvitationDetails: React.FC = () => {
           </div>
         </div>
 
-        {/* Timeline del día */}
         <div className={`${styles.timeline} relative`}>
-          {/* Flores específicas del timeline */}
           <div className="absolute -top-4 -left-4 z-5">
             <FloralDecoration size="small" opacity={0.15} />
           </div>
@@ -413,7 +391,6 @@ const InvitationDetails: React.FC = () => {
           </div>
         </div>
 
-        {/* Botones de acción */}
         <div className={styles.actions}>
           <button className={styles.confirmButton}>
             <HeartIcon size={20} className="mr-2" />
@@ -422,13 +399,11 @@ const InvitationDetails: React.FC = () => {
           <button className={styles.mapButton}>📍 Ver Ubicación</button>
         </div>
 
-        {/* Footer decorativo */}
         <div className={styles.footer}>
           <FloralDecoration position="bottom-center" opacity={0.2} />
         </div>
       </div>
 
-      {/* Footer principal */}
       <footer className="relative bg-wedding-olive border-t border-wedding-gold/20 py-8 z-10">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <AnimatedText
@@ -441,11 +416,11 @@ const InvitationDetails: React.FC = () => {
           </p>
         </div>
       </footer>
+      <MusicControlButton />
     </div>
   );
 };
 
-// Componente para items del timeline
 const TimelineItem: React.FC<{ time: string; event: string }> = ({
   time,
   event,

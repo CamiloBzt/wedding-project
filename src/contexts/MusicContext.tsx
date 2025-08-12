@@ -30,24 +30,21 @@ export function MusicProvider({ children }: { children: ReactNode }) {
   const hasTriedAutoplay = useRef(false);
 
   useEffect(() => {
-    // Inicializar música de fondo
     if (typeof window !== "undefined") {
       backgroundMusicRef.current = new Audio("/sounds/wedding-bg.mp3");
       backgroundMusicRef.current.loop = true;
       backgroundMusicRef.current.volume = volume;
       backgroundMusicRef.current.preload = "auto";
 
-      // Marcar como listo cuando el audio esté cargado
       backgroundMusicRef.current.addEventListener("canplaythrough", () => {
         setIsReady(true);
-        // Intentar autoplay solo una vez cuando esté listo
+
         if (!hasTriedAutoplay.current) {
           hasTriedAutoplay.current = true;
           tryAutoplay();
         }
       });
 
-      // Manejar eventos de reproducción
       backgroundMusicRef.current.addEventListener("play", () => {
         setIsPlaying(true);
       });
@@ -56,12 +53,11 @@ export function MusicProvider({ children }: { children: ReactNode }) {
         setIsPlaying(false);
       });
 
-      // Agregar listeners para interacción del usuario
       const handleUserInteraction = async () => {
         if (!isPlaying && isReady) {
           await initializeMusic();
         }
-        // Remover listeners después de la primera interacción
+
         document.removeEventListener("click", handleUserInteraction);
         document.removeEventListener("touchstart", handleUserInteraction);
         document.removeEventListener("keydown", handleUserInteraction);

@@ -2,6 +2,7 @@
 
 import { useInvitation } from "@/contexts/InvitationContext";
 import { useMusic } from "@/contexts/MusicContext";
+import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import styles from "./EnvelopeInvitation.module.css";
 
@@ -13,26 +14,17 @@ const EnvelopeInvitation: React.FC = () => {
   const [textAnimationStep, setTextAnimationStep] = useState(0);
 
   const handleContinue = async () => {
-    // Asegurar que la música se inicie al hacer clic
     if (!isPlaying && isReady) {
       await initializeMusic();
     }
 
-    // Marcar sobre como abierto para la transición
     setEnvelopeOpen(true);
   };
 
   useEffect(() => {
-    // Animación de entrada secuencial
     const timer = setTimeout(() => {
       setIsVisible(true);
 
-      // Intentar inicializar música si está lista
-      if (isReady && !isPlaying) {
-        initializeMusic().catch(console.log);
-      }
-
-      // Animar texto paso a paso
       const textTimer = setInterval(() => {
         setTextAnimationStep((prev) => {
           if (prev >= 3) {
@@ -47,13 +39,33 @@ const EnvelopeInvitation: React.FC = () => {
     }, 100);
 
     return () => clearTimeout(timer);
-  }, [isReady, isPlaying, initializeMusic]);
+  }, []);
 
   return (
     <div className="invitation-container">
       <div className={`${isVisible ? "animate-fade-in" : "opacity-0"}`}>
         <div className={styles.envelopeContainer}>
           <div className={styles.envelopeBase}>
+            <div
+              className={`${
+                styles.couplePhoto
+              } transition-all duration-1000 delay-500 ${
+                textAnimationStep >= 2
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-4"
+              }`}
+            >
+              <div className={styles.photoFrame}>
+                <Image
+                  src="/images/couple-photo.jpg"
+                  alt="Foto de la pareja"
+                  width={100}
+                  height={100}
+                  className={styles.photoImage}
+                />
+              </div>
+            </div>
+
             <div className={styles.letterPeeking}>
               <div className="bg-wedding-cream p-6 md:p-8 rounded-lg shadow-xl border border-wedding-gold/20 relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-wedding-gold/5 via-transparent to-wedding-gold/10"></div>

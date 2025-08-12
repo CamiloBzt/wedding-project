@@ -57,11 +57,9 @@ const FloralDecoration: React.FC<FloralDecorationProps> = ({
         xmlns="http://www.w3.org/2000/svg"
         className="w-full h-full"
       >
-        {/* Floral Pattern */}
         <g className="animate-pulse">
-          {/* Main flower */}
           <circle cx="50" cy="50" r="8" fill={color} opacity="0.6" />
-          {/* Petals */}
+
           {[0, 45, 90, 135, 180, 225, 270, 315].map((angle, i) => (
             <ellipse
               key={i}
@@ -76,7 +74,6 @@ const FloralDecoration: React.FC<FloralDecorationProps> = ({
           ))}
         </g>
 
-        {/* Decorative leaves */}
         <path
           d="M30 60 Q20 55, 25 45 T35 40"
           stroke={color}
@@ -92,7 +89,6 @@ const FloralDecoration: React.FC<FloralDecorationProps> = ({
           opacity="0.5"
         />
 
-        {/* Small decorative dots */}
         {[
           [20, 30],
           [80, 30],

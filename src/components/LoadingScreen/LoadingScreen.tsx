@@ -22,7 +22,6 @@ const LoadingScreen: React.FC = () => {
 
   return (
     <div className="fixed inset-0 bg-[#7c9070] flex flex-col items-center justify-center z-50">
-      {/* Animación del corazón */}
       <div className="relative mb-8">
         <div className={styles.heartContainer}>
           <svg
@@ -45,17 +44,14 @@ const LoadingScreen: React.FC = () => {
         </div>
       </div>
 
-      {/* Nombres */}
       <h1 className="text-4xl md:text-5xl font-script text-[#fdf6f0] mb-2 animate-fade-in">
         Johanna & Enrique
       </h1>
 
-      {/* Fecha */}
       <p className="text-[#d4a574] text-lg font-sans font-light mb-8">
         25.10.2025
       </p>
 
-      {/* Barra de progreso */}
       <div className="w-64 h-1 bg-black/20 rounded-full overflow-hidden">
         <div
           className="h-full transition-all duration-300 ease-out"
@@ -66,7 +62,6 @@ const LoadingScreen: React.FC = () => {
         />
       </div>
 
-      {/* Texto de carga */}
       <p className="text-[#fdf6f0]/60 text-sm font-sans mt-4 animate-pulse">
         Preparando tu invitación...
       </p>

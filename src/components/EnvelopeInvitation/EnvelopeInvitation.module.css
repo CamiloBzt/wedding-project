@@ -1,4 +1,3 @@
-/* Contenedor principal del sobre con perspectiva mejorada */
 .envelopeContainer {
     position: relative;
     width: 420px;
@@ -30,7 +29,7 @@
     }
 }
 
-/* Base del sobre con textura mejorada */
+
 .envelopeBase {
     position: absolute;
     width: 100%;
@@ -68,7 +67,7 @@
     pointer-events: none;
 }
 
-/* Carta con animación de flotación mejorada */
+
 .letterPeeking {
     position: absolute;
     width: 85%;
@@ -84,23 +83,23 @@
 
     0%,
     100% {
-        transform: translateY(0) rotate(0deg) scale(1);
+        transform: translateY(0) rotate(3deg) scale(1);
     }
 
     25% {
-        transform: translateY(-6px) rotate(0.3deg) scale(1.01);
+        transform: translateY(-6px) rotate(3.3deg) scale(1.01);
     }
 
     50% {
-        transform: translateY(-12px) rotate(0deg) scale(1.02);
+        transform: translateY(-12px) rotate(3deg) scale(1.02);
     }
 
     75% {
-        transform: translateY(-6px) rotate(-0.3deg) scale(1.01);
+        transform: translateY(-6px) rotate(2.7deg) scale(1.01);
     }
 }
 
-/* Sombra realista mejorada */
+
 .envelopeShadow {
     position: absolute;
     bottom: -20px;
@@ -129,7 +128,7 @@
     }
 }
 
-/* Botón principal con efectos avanzados */
+
 .mainButton {
     width: 100%;
     padding: 14px 24px;
@@ -223,7 +222,7 @@
     }
 }
 
-/* Elementos flotantes mejorados */
+
 .floatingElements {
     position: absolute;
     width: 100%;
@@ -271,7 +270,7 @@
     }
 }
 
-/* Animaciones adicionales para partículas */
+
 .floatingHeart:nth-child(even) {
     animation-direction: reverse;
 }
@@ -284,7 +283,7 @@
     animation-duration: 12s;
 }
 
-/* Responsive Design mejorado */
+
 @media (max-width: 768px) {
     .envelopeContainer {
         width: 350px;
@@ -329,7 +328,7 @@
     }
 }
 
-/* Mejoras para accesibilidad */
+
 @media (prefers-reduced-motion: reduce) {
 
     .envelopeContainer,
@@ -344,7 +343,7 @@
     }
 }
 
-/* Efectos adicionales para pantallas grandes */
+
 @media (min-width: 1200px) {
     .envelopeContainer {
         width: 480px;
@@ -353,5 +352,108 @@
 
     .letterPeeking {
         top: -22rem;
+    }
+}
+
+.couplePhoto {
+    position: absolute;
+    left: -50px;
+    top: -340px;
+    z-index: 100;
+    animation: photoFloatEnhanced 6s ease-in-out infinite;
+    transform-origin: bottom center;
+    filter: drop-shadow(0 12px 30px rgba(0, 0, 0, 0.2));
+}
+
+.photoFrame {
+    width: 140px;
+    height: 180px;
+    background: #fdf6f0;
+    padding: 8px;
+    border-radius: 12px;
+    border: 1px solid rgba(220, 200, 180, 0.9);
+    transform: rotate(-8deg);
+    position: relative;
+}
+
+.photoFrame::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(0, 0, 0, 0.05) 0%, transparent 50%);
+    border-radius: inherit;
+    pointer-events: none;
+}
+
+.photoImage {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes photoFloatEnhanced {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(-8deg) scale(1);
+    }
+
+    25% {
+        transform: translateY(-8px) rotate(-7.5deg) scale(1.01);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(-8deg) scale(1.02);
+    }
+
+    75% {
+        transform: translateY(-8px) rotate(-8.5deg) scale(1.01);
+    }
+}
+
+@media (max-width: 768px) {
+    .couplePhoto {
+        left: 0;
+        top: -250px;
+    }
+
+    .photoFrame {
+        width: 100px;
+        height: 130px;
+        padding: 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    .couplePhoto {
+        right: -60px;
+        top: -300px;
+    }
+
+    .photoFrame {
+        width: 80px;
+        height: 110px;
+        padding: 5px;
+        transform: rotate(-10deg);
+    }
+}
+
+@media (min-width: 1200px) {
+    .couplePhoto {
+        right: -140px;
+        top: -24rem;
+    }
+
+    .photoFrame {
+        width: 160px;
+        height: 200px;
+        padding: 10px;
     }
 }

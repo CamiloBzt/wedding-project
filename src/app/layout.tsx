@@ -1,7 +1,6 @@
-import type { Metadata, Viewport } from "next";
 import { InvitationProvider } from "@/contexts/InvitationContext";
 import { MusicProvider } from "@/contexts/MusicContext";
-import MusicControlButton from "@/components/shared/MusicControlButton";
+import type { Metadata, Viewport } from "next";
 import { Great_Vibes, Montserrat, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
@@ -77,7 +76,6 @@ export default function RootLayout({
         <MusicProvider>
           <InvitationProvider>
             <main className="min-h-screen">{children}</main>
-            <MusicControlButton />
           </InvitationProvider>
         </MusicProvider>
       </body>
