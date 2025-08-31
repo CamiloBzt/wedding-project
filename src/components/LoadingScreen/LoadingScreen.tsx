@@ -21,7 +21,7 @@ const LoadingScreen: React.FC = () => {
   }, []);
 
   return (
-    <div className="fixed inset-0 bg-[#7c9070] flex flex-col items-center justify-center z-50">
+    <div className="fixed inset-0 bg-[#a9c4dd] flex flex-col items-center justify-center z-50">
       <div className="relative mb-8">
         <div className={styles.heartContainer}>
           <svg
@@ -33,7 +33,7 @@ const LoadingScreen: React.FC = () => {
           >
             <path
               d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
-              fill="#d4a574"
+              fill="#F7E7CE"
             />
           </svg>
           <div className={styles.pulseRing}></div>
@@ -48,7 +48,7 @@ const LoadingScreen: React.FC = () => {
         Johanna & Enrique
       </h1>
 
-      <p className="text-[#d4a574] text-lg font-sans font-light mb-8">
+      <p className="text-[#F7E7CE] text-lg font-sans font-light mb-8">
         25.10.2025
       </p>
 
@@ -57,7 +57,7 @@ const LoadingScreen: React.FC = () => {
           className="h-full transition-all duration-300 ease-out"
           style={{
             width: `${progress}%`,
-            background: "linear-gradient(to right, #d4a574, #fdf6f0)",
+            background: "linear-gradient(to right, #F7E7CE, #fdf6f0)",
           }}
         />
       </div>

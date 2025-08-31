@@ -17,7 +17,7 @@ interface FloralDecorationProps {
 const FloralDecoration: React.FC<FloralDecorationProps> = ({
   position = "top-left",
   size = "medium",
-  color = "#d4a574",
+  color = "#F7E7CE",
   opacity = 0.3,
 }) => {
   const getSizeClasses = () => {

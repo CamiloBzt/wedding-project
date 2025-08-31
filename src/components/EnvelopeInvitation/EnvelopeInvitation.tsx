@@ -168,7 +168,7 @@ const EnvelopeInvitation: React.FC = () => {
                         height="20"
                         viewBox="0 0 24 24"
                         fill="currentColor"
-                        className="text-wedding-cream animate-pulse"
+                        className="text-wedding-gold animate-pulse"
                       >
                         <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
                       </svg>
@@ -177,12 +177,12 @@ const EnvelopeInvitation: React.FC = () => {
                         height="20"
                         viewBox="0 0 24 24"
                         fill="currentColor"
-                        className="text-wedding-cream animate-pulse delay-200 -ml-2"
+                        className="text-wedding-gold animate-pulse delay-200 -ml-2"
                       >
                         <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
                       </svg>
                     </div>
-                    <span className="text-wedding-cream font-sans font-semibold text-sm md:text-base">
+                    <span className="text-wedding-gold font-sans font-semibold text-sm md:text-base">
                       Abrir Invitación
                     </span>
                   </div>

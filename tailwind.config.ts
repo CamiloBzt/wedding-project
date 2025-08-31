@@ -10,11 +10,11 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Paleta de colores personalizada para la boda - Verde Oliva Claro
-        "wedding-olive": "#7c9070", // Verde oliva claro principal
-        "wedding-olive-dark": "#5a6b50", // Verde oliva oscuro
-        "wedding-olive-light": "#a3b899", // Verde oliva muy claro
-        "wedding-gold": "#d4a574", // Dorado
+        // Paleta de colores personalizada para la boda - Azul Pastel
+        "wedding-olive": "#a9c4dd", // Azul pastel principal
+        "wedding-olive-dark": "#7f95b3", // Azul pastel oscuro
+        "wedding-olive-light": "#cdd9e7", // Azul pastel muy claro
+        "wedding-gold": "#F7E7CE", // Dorado suave
         "wedding-cream": "#fdf6f0", // Crema
         "wedding-sage": "#b5c2a9", // Verde salvia claro
         "wedding-white": "#ffffff",

@@ -78,7 +78,7 @@ const MusicControlButton: React.FC = () => {
               onChange={(e) => setVolume(Number(e.target.value) / 100)}
               className="w-32 h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer slider range-slider"
               style={{
-                background: `linear-gradient(to right, #d4a574 0%, #d4a574 ${
+                background: `linear-gradient(to right, #F7E7CE 0%, #F7E7CE ${
                   volume * 100
                 }%, #e5e5e5 ${volume * 100}%, #e5e5e5 100%)`,
               }}
@@ -90,7 +90,7 @@ const MusicControlButton: React.FC = () => {
                 width: 16px;
                 height: 16px;
                 border-radius: 50%;
-                background: #d4a574;
+                background: #F7E7CE;
                 cursor: pointer;
                 border: 2px solid #ffffff;
                 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -100,19 +100,19 @@ const MusicControlButton: React.FC = () => {
                 width: 16px;
                 height: 16px;
                 border-radius: 50%;
-                background: #d4a574;
+                background: #F7E7CE;
                 cursor: pointer;
                 border: 2px solid #ffffff;
                 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
               }
 
               .range-slider::-webkit-slider-thumb:hover {
-                background: #c89660;
+                background: #e5d2b8;
                 transform: scale(1.1);
               }
 
               .range-slider::-moz-range-thumb:hover {
-                background: #c89660;
+                background: #e5d2b8;
                 transform: scale(1.1);
               }
             `}</style>
@@ -131,7 +131,7 @@ const MusicControlButton: React.FC = () => {
         >
           {isPlaying ? (
             <svg
-              className="w-6 h-6 text-[#7c9070] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+              className="w-6 h-6 text-[#a9c4dd] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
               fill="none"
               stroke="currentColor"
               strokeWidth="2"
@@ -156,8 +156,8 @@ const MusicControlButton: React.FC = () => {
 
           {isPlaying && (
             <>
-              <span className="absolute inset-0 rounded-full bg-[#7c9070]/20 animate-ping"></span>
-              <span className="absolute inset-0 rounded-full bg-[#7c9070]/10 animate-ping animation-delay-200"></span>
+              <span className="absolute inset-0 rounded-full bg-[#a9c4dd]/20 animate-ping"></span>
+              <span className="absolute inset-0 rounded-full bg-[#a9c4dd]/10 animate-ping animation-delay-200"></span>
             </>
           )}
         </button>
