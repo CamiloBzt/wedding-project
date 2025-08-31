@@ -302,16 +302,16 @@ const InvitationDetails: React.FC = () => {
             </h2>
 
             <div className={styles.sectionContent}>
-              {Object.entries(sections[activeSection].content).map(
-                ([key, value]) => (
+              {Object.entries(sections[activeSection].content)
+                .filter(([key]) => key !== "drive_url")
+                .map(([key, value]) => (
                   <div key={key} className={styles.infoItem}>
                     <span className={styles.infoLabel}>
                       {key.charAt(0).toUpperCase() + key.slice(1)}:
                     </span>
                     <span className={styles.infoValue}>{value}</span>
                   </div>
-                )
-              )}
+                ))}
             </div>
 
             {activeSection === 3 && (
