@@ -21,7 +21,7 @@ const LoadingScreen: React.FC = () => {
   }, []);
 
   return (
-    <div className="fixed inset-0 bg-wedding-olive flex flex-col items-center justify-center z-50">
+    <div className="fixed inset-0 bg-wedding-primary flex flex-col items-center justify-center z-50">
       <div className="relative mb-8">
         <div className={styles.heartContainer}>
           <svg

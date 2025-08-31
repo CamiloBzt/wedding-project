@@ -97,7 +97,7 @@ const EnvelopeInvitation: React.FC = () => {
                         : "opacity-0 translate-y-4"
                     }`}
                   >
-                    <h2 className="text-3xl md:text-4xl font-script text-wedding-olive mb-2 drop-shadow-sm">
+                    <h2 className="text-3xl md:text-4xl font-script text-wedding-gold mb-2 drop-shadow-sm">
                       {weddingDetails.brideName}
                     </h2>
                   </div>
@@ -109,7 +109,7 @@ const EnvelopeInvitation: React.FC = () => {
                         : "opacity-0 scale-95"
                     }`}
                   >
-                    <span className="text-2xl font-script text-wedding-olive inline-block mx-2">
+                    <span className="text-2xl font-script text-wedding-gold inline-block mx-2">
                       &
                     </span>
                   </div>
@@ -121,7 +121,7 @@ const EnvelopeInvitation: React.FC = () => {
                         : "opacity-0 translate-y-4"
                     }`}
                   >
-                    <h2 className="text-3xl md:text-4xl font-script text-wedding-olive mt-1 drop-shadow-sm">
+                    <h2 className="text-3xl md:text-4xl font-script text-wedding-gold mt-1 drop-shadow-sm">
                       {weddingDetails.groomName}
                     </h2>
                   </div>

@@ -59,7 +59,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 1,
-  themeColor: "#f7e7ce",
+  themeColor: "#a9c4dd",
 };
 
 export default function RootLayout({
@@ -72,7 +72,7 @@ export default function RootLayout({
       lang="es"
       className={`${greatVibes.variable} ${montserrat.variable} ${playfairDisplay.variable}`}
     >
-      <body className="bg-wedding-olive antialiased">
+      <body className="bg-wedding-primary antialiased">
         <MusicProvider>
           <InvitationProvider>
             <main className="min-h-screen">{children}</main>

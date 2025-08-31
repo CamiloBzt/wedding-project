@@ -20,7 +20,7 @@ export const QRPhotoSection: React.FC<{
 
   return (
     <div className="mt-6 p-6 bg-wedding-cream/50 rounded-lg text-center">
-      <h4 className="text-xl font-serif text-wedding-olive mb-4">
+      <h4 className="text-xl font-serif text-wedding-gold mb-4">
         📸 ¡Comparte tus fotos con nosotros!
       </h4>
 
@@ -38,7 +38,7 @@ export const QRPhotoSection: React.FC<{
             height={100}
           />
         </div>
-        <p className="text-sm text-wedding-olive/70 mt-2">
+        <p className="text-sm text-wedding-gold/70 mt-2">
           Escanea con tu cámara del celular
         </p>
       </div>
@@ -49,7 +49,7 @@ export const QRPhotoSection: React.FC<{
           <span className="flex-shrink-0 w-6 h-6 bg-wedding-accent text-white rounded-full flex items-center justify-center text-sm font-bold">
             1
           </span>
-          <p className="text-sm text-wedding-olive">
+          <p className="text-sm text-wedding-gold">
             Escanea el código QR con la cámara de tu celular
           </p>
         </div>
@@ -58,7 +58,7 @@ export const QRPhotoSection: React.FC<{
           <span className="flex-shrink-0 w-6 h-6 bg-wedding-accent text-white rounded-full flex items-center justify-center text-sm font-bold">
             2
           </span>
-          <p className="text-sm text-wedding-olive">
+          <p className="text-sm text-wedding-gold">
             Se abrirá Google Drive automáticamente
           </p>
         </div>
@@ -67,21 +67,21 @@ export const QRPhotoSection: React.FC<{
           <span className="flex-shrink-0 w-6 h-6 bg-wedding-accent text-white rounded-full flex items-center justify-center text-sm font-bold">
             3
           </span>
-          <p className="text-sm text-wedding-olive">
+          <p className="text-sm text-wedding-gold">
             Toca el botón &quot;+&quot; y sube tus fotos/videos
           </p>
         </div>
       </div>
 
       {/* Alternativa con hashtag */}
-      <div className="mt-6 p-4 bg-wedding-olive/10 rounded-lg">
-        <h5 className="font-semibold text-wedding-olive mb-2">
+      <div className="mt-6 p-4 bg-wedding-primary/10 rounded-lg">
+        <h5 className="font-semibold text-wedding-gold mb-2">
           ¿Prefieres redes sociales?
         </h5>
-        <p className="text-wedding-olive font-semibold text-lg mb-1">
+        <p className="text-wedding-gold font-semibold text-lg mb-1">
           {hashtag}
         </p>
-        <p className="text-sm text-wedding-olive/70">
+        <p className="text-sm text-wedding-gold/70">
           Usa este hashtag en Instagram, Facebook o Twitter
         </p>
       </div>

@@ -158,7 +158,7 @@ const InvitationDetails: React.FC = () => {
   }, [sections.length]);
 
   return (
-    <div className="min-h-screen bg-wedding-olive relative overflow-hidden">
+    <div className="min-h-screen bg-wedding-primary relative overflow-hidden">
       <div className="fixed inset-0 pointer-events-none z-0">
         <FloralDecoration position="top-left" size="large" opacity={0.15} />
         <FloralDecoration position="top-right" size="large" opacity={0.12} />
@@ -208,7 +208,7 @@ const InvitationDetails: React.FC = () => {
         </div>
       </div>
 
-      <header className="sticky top-0 z-50 bg-wedding-olive/95 backdrop-blur-sm border-b border-wedding-accent/20 py-3">
+      <header className="sticky top-0 z-50 bg-wedding-primary/95 backdrop-blur-sm border-b border-wedding-accent/20 py-3">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <div className="flex items-center justify-center gap-2">
             <HeartIcon size={18} className="text-wedding-accent" animated />
@@ -297,7 +297,7 @@ const InvitationDetails: React.FC = () => {
 
         <div className={styles.content}>
           <div className={styles.sectionCard}>
-            <h2 className="text-3xl font-serif text-wedding-olive mb-6">
+            <h2 className="text-3xl font-serif text-wedding-gold mb-6">
               {sections[activeSection].title}
             </h2>
 
@@ -315,11 +315,11 @@ const InvitationDetails: React.FC = () => {
             </div>
 
             {activeSection === 3 && (
-              <div className="mt-6 p-4 bg-wedding-olive/10 rounded-lg">
-                <h4 className="text-lg font-serif text-wedding-olive mb-3">
+              <div className="mt-6 p-4 bg-wedding-primary/10 rounded-lg">
+                <h4 className="text-lg font-serif text-wedding-gold mb-3">
                   Consejos importantes:
                 </h4>
-                <ul className="space-y-2 text-sm text-wedding-olive/80">
+                <ul className="space-y-2 text-sm text-wedding-gold/80">
                   <li>
                     • Queremos que disfrutes al máximo, por eso es solo para
                     adultos
@@ -333,23 +333,23 @@ const InvitationDetails: React.FC = () => {
 
             {activeSection === 4 && (
               <div className="mt-6 p-4 bg-wedding-accent/10 rounded-lg">
-                <h4 className="text-lg font-serif text-wedding-olive mb-3">
+                <h4 className="text-lg font-serif text-wedding-gold mb-3">
                   Opciones para regalos:
                 </h4>
                 <div className="space-y-3 text-sm">
                   <div className="p-3 bg-wedding-cream rounded border-l-3 border-wedding-accent">
-                    <p className="font-semibold text-wedding-olive">
+                    <p className="font-semibold text-wedding-gold">
                       Sobres en la recepción
                     </p>
-                    <p className="text-wedding-olive/70">
+                    <p className="text-wedding-gold/70">
                       Tendremos un cofre especial disponible
                     </p>
                   </div>
                   <div className="p-3 bg-wedding-cream rounded border-l-3 border-wedding-accent">
-                    <p className="font-semibold text-wedding-olive">
+                    <p className="font-semibold text-wedding-gold">
                       Transferencia bancaria
                     </p>
-                    <p className="text-wedding-olive/70">
+                    <p className="text-wedding-gold/70">
                       Cuenta disponible por mensaje privado
                     </p>
                   </div>
@@ -374,7 +374,7 @@ const InvitationDetails: React.FC = () => {
             <FloralDecoration size="medium" opacity={0.12} />
           </div>
 
-          <h3 className="text-2xl font-serif text-wedding-olive mb-6 text-center">
+          <h3 className="text-2xl font-serif text-wedding-gold mb-6 text-center">
             Itinerario del Día
           </h3>
           <div className={styles.timelineItems}>
@@ -404,7 +404,7 @@ const InvitationDetails: React.FC = () => {
         </div>
       </div>
 
-      <footer className="relative bg-wedding-olive border-t border-wedding-accent/20 py-8 z-10">
+      <footer className="relative bg-wedding-primary border-t border-wedding-accent/20 py-8 z-10">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <AnimatedText
             text="Con amor, Johanna & Enrique"

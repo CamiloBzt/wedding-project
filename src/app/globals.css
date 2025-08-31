@@ -13,7 +13,7 @@
     color: #333333;
     overflow-x: hidden;
     font-family: var(--font-montserrat), sans-serif;
-    background-color: #f7e7ce;
+    background-color: #a9c4dd;
   }
 
   h1,
@@ -45,7 +45,7 @@
     align-items: center;
     justify-content: center;
     padding: 1rem;
-    background: linear-gradient(135deg, #f7e7ce 0%, #f7e7ce 100%);
+    background: linear-gradient(135deg, #a9c4dd 0%, #a9c4dd 100%);
   }
 
   .envelope-shadow {
@@ -68,7 +68,7 @@
 @layer utilities {
 
   /* Colores de wedding unificados */
-  .text-wedding-olive {
+  .text-wedding-gold {
     color: #f7e7ce;
   }
 
@@ -80,8 +80,8 @@
     color: #fdf6f0;
   }
 
-  .bg-wedding-olive {
-    background-color: #f7e7ce;
+  .bg-wedding-primary {
+    background-color: #a9c4dd;
   }
 
   .bg-wedding-accent {
@@ -93,8 +93,8 @@
   }
 
   /* Bordes sólidos */
-  .border-wedding-olive {
-    border-color: #f7e7ce;
+  .border-wedding-primary {
+    border-color: #a9c4dd;
   }
 
   .border-wedding-accent {
@@ -106,15 +106,15 @@
   }
 
   /* Colores con transparencias */
-  .text-wedding-olive\/80 {
+  .text-wedding-gold\/80 {
     color: rgba(247, 231, 206, 0.8);
   }
 
-  .text-wedding-olive\/70 {
+  .text-wedding-gold\/70 {
     color: rgba(247, 231, 206, 0.7);
   }
 
-  .text-wedding-olive\/60 {
+  .text-wedding-gold\/60 {
     color: rgba(247, 231, 206, 0.6);
   }
 
@@ -139,16 +139,16 @@
   }
 
   /* Fondos con transparencias */
-  .bg-wedding-olive\/95 {
-    background-color: rgba(247, 231, 206, 0.95);
+  .bg-wedding-primary\/95 {
+    background-color: rgba(169, 196, 221, 0.95);
   }
 
-  .bg-wedding-olive\/20 {
-    background-color: rgba(247, 231, 206, 0.2);
+  .bg-wedding-primary\/20 {
+    background-color: rgba(169, 196, 221, 0.2);
   }
 
-  .bg-wedding-olive\/10 {
-    background-color: rgba(247, 231, 206, 0.1);
+  .bg-wedding-primary\/10 {
+    background-color: rgba(169, 196, 221, 0.1);
   }
 
   .bg-wedding-accent\/20 {
@@ -180,8 +180,8 @@
     border-color: rgba(75, 93, 115, 0.3);
   }
 
-  .border-wedding-olive\/20 {
-    border-color: rgba(247, 231, 206, 0.2);
+  .border-wedding-primary\/20 {
+    border-color: rgba(169, 196, 221, 0.2);
   }
 
   /* Utilidades de líneas/divisores */
@@ -306,7 +306,7 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #f7e7ce;
+  background: #a9c4dd;
 }
 
 ::-webkit-scrollbar-thumb {
