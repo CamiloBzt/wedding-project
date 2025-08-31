@@ -48,7 +48,7 @@ const LoadingScreen: React.FC = () => {
         Johanna & Enrique
       </h1>
 
-      <p className="text-[#4b5d73] text-lg font-sans font-light mb-8">
+      <p className="text-wedding-gold text-lg font-sans font-light mb-8">
         25.10.2025
       </p>
 

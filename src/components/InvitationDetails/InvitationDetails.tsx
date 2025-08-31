@@ -208,7 +208,7 @@ const InvitationDetails: React.FC = () => {
         </div>
       </div>
 
-      <header className="sticky top-0 z-50 bg-wedding-olive/95 backdrop-blur-sm border-b border-wedding-gold/20 py-3">
+      <header className="sticky top-0 z-50 bg-wedding-olive/95 backdrop-blur-sm border-b border-wedding-accent/20 py-3">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <div className="flex items-center justify-center gap-2">
             <HeartIcon size={18} className="text-wedding-gold" animated />
@@ -332,12 +332,12 @@ const InvitationDetails: React.FC = () => {
             )}
 
             {activeSection === 4 && (
-              <div className="mt-6 p-4 bg-wedding-gold/10 rounded-lg">
+              <div className="mt-6 p-4 bg-wedding-accent/10 rounded-lg">
                 <h4 className="text-lg font-serif text-wedding-olive mb-3">
                   Opciones para regalos:
                 </h4>
                 <div className="space-y-3 text-sm">
-                  <div className="p-3 bg-wedding-cream rounded border-l-3 border-wedding-gold">
+                  <div className="p-3 bg-wedding-cream rounded border-l-3 border-wedding-accent">
                     <p className="font-semibold text-wedding-olive">
                       Sobres en la recepción
                     </p>
@@ -345,7 +345,7 @@ const InvitationDetails: React.FC = () => {
                       Tendremos un cofre especial disponible
                     </p>
                   </div>
-                  <div className="p-3 bg-wedding-cream rounded border-l-3 border-wedding-gold">
+                  <div className="p-3 bg-wedding-cream rounded border-l-3 border-wedding-accent">
                     <p className="font-semibold text-wedding-olive">
                       Transferencia bancaria
                     </p>
@@ -404,7 +404,7 @@ const InvitationDetails: React.FC = () => {
         </div>
       </div>
 
-      <footer className="relative bg-wedding-olive border-t border-wedding-gold/20 py-8 z-10">
+      <footer className="relative bg-wedding-olive border-t border-wedding-accent/20 py-8 z-10">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <AnimatedText
             text="Con amor, Johanna & Enrique"

@@ -61,11 +61,11 @@
   }
 
   .gold-gradient {
-    background: linear-gradient(135deg, #4b5d73 0%, #4b5d73 100%);
+    background: linear-gradient(135deg, #d4a574 0%, #d4a574 100%);
   }
 
   .navy-gradient {
-    background: linear-gradient(135deg, #a9c4dd 0%, #a9c4dd 100%);
+    background: linear-gradient(135deg, #4b5d73 0%, #4b5d73 100%);
   }
 }
 
@@ -77,6 +77,10 @@
   }
 
   .text-wedding-gold {
+    color: #d4a574;
+  }
+
+  .text-wedding-accent {
     color: #4b5d73;
   }
 
@@ -89,6 +93,10 @@
   }
 
   .bg-wedding-gold {
+    background-color: #d4a574;
+  }
+
+  .bg-wedding-accent {
     background-color: #4b5d73;
   }
 
@@ -102,6 +110,10 @@
   }
 
   .border-wedding-gold {
+    border-color: #d4a574;
+  }
+
+  .border-wedding-accent {
     border-color: #4b5d73;
   }
 
@@ -123,10 +135,18 @@
   }
 
   .text-wedding-gold\/90 {
-    color: rgba(75, 93, 115, 0.9);
+    color: rgba(212, 165, 116, 0.9);
   }
 
   .text-wedding-gold\/80 {
+    color: rgba(212, 165, 116, 0.8);
+  }
+
+  .text-wedding-accent\/90 {
+    color: rgba(75, 93, 115, 0.9);
+  }
+
+  .text-wedding-accent\/80 {
     color: rgba(75, 93, 115, 0.8);
   }
 
@@ -156,10 +176,18 @@
   }
 
   .bg-wedding-gold\/20 {
-    background-color: rgba(75, 93, 115, 0.2);
+    background-color: rgba(212, 165, 116, 0.2);
   }
 
   .bg-wedding-gold\/10 {
+    background-color: rgba(212, 165, 116, 0.1);
+  }
+
+  .bg-wedding-accent\/20 {
+    background-color: rgba(75, 93, 115, 0.2);
+  }
+
+  .bg-wedding-accent\/10 {
     background-color: rgba(75, 93, 115, 0.1);
   }
 
@@ -177,10 +205,18 @@
 
   /* Bordes con transparencias */
   .border-wedding-gold\/20 {
-    border-color: rgba(75, 93, 115, 0.2);
+    border-color: rgba(212, 165, 116, 0.2);
   }
 
   .border-wedding-gold\/30 {
+    border-color: rgba(212, 165, 116, 0.3);
+  }
+
+  .border-wedding-accent\/20 {
+    border-color: rgba(75, 93, 115, 0.2);
+  }
+
+  .border-wedding-accent\/30 {
     border-color: rgba(75, 93, 115, 0.3);
   }
 
@@ -190,15 +226,31 @@
 
   /* Utilidades de líneas/divisores */
   .bg-wedding-gold\/50 {
-    background-color: rgba(75, 93, 115, 0.5);
+    background-color: rgba(212, 165, 116, 0.5);
   }
 
   .bg-wedding-gold\/40 {
-    background-color: rgba(75, 93, 115, 0.4);
+    background-color: rgba(212, 165, 116, 0.4);
   }
 
   .bg-wedding-gold\/30 {
+    background-color: rgba(212, 165, 116, 0.3);
+  }
+
+  .bg-wedding-accent\/50 {
+    background-color: rgba(75, 93, 115, 0.5);
+  }
+
+  .bg-wedding-accent\/40 {
+    background-color: rgba(75, 93, 115, 0.4);
+  }
+
+  .bg-wedding-accent\/30 {
     background-color: rgba(75, 93, 115, 0.3);
+  }
+
+  .bg-wedding-accent\/90 {
+    background-color: rgba(75, 93, 115, 0.9);
   }
 
   /* Border left personalizado */
