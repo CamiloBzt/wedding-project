@@ -13,7 +13,7 @@
     color: #333333;
     overflow-x: hidden;
     font-family: var(--font-montserrat), sans-serif;
-    background-color: #7c9070;
+    background-color: #a9c4dd;
   }
 
   h1,
@@ -45,7 +45,7 @@
     align-items: center;
     justify-content: center;
     padding: 1rem;
-    background: linear-gradient(135deg, #7c9070 0%, #7c9070 100%);
+    background: linear-gradient(135deg, #a9c4dd 0%, #a9c4dd 100%);
   }
 
   .envelope-shadow {
@@ -61,11 +61,11 @@
   }
 
   .gold-gradient {
-    background: linear-gradient(135deg, #d4a574 0%, #d4a574 100%);
+    background: linear-gradient(135deg, #F7E7CE 0%, #F7E7CE 100%);
   }
 
   .navy-gradient {
-    background: linear-gradient(135deg, #7c9070 0%, #7c9070 100%);
+    background: linear-gradient(135deg, #a9c4dd 0%, #a9c4dd 100%);
   }
 }
 
@@ -73,11 +73,11 @@
 
   /* Colores de wedding unificados */
   .text-wedding-olive {
-    color: #7c9070;
+    color: #a9c4dd;
   }
 
   .text-wedding-gold {
-    color: #d4a574;
+    color: #F7E7CE;
   }
 
   .text-wedding-cream {
@@ -85,11 +85,11 @@
   }
 
   .bg-wedding-olive {
-    background-color: #7c9070;
+    background-color: #a9c4dd;
   }
 
   .bg-wedding-gold {
-    background-color: #d4a574;
+    background-color: #F7E7CE;
   }
 
   .bg-wedding-cream {
@@ -98,11 +98,11 @@
 
   /* Bordes sólidos */
   .border-wedding-olive {
-    border-color: #7c9070;
+    border-color: #a9c4dd;
   }
 
   .border-wedding-gold {
-    border-color: #d4a574;
+    border-color: #F7E7CE;
   }
 
   .border-wedding-cream {
@@ -111,23 +111,23 @@
 
   /* Colores con transparencias */
   .text-wedding-olive\/80 {
-    color: rgba(124, 144, 112, 0.8);
+    color: rgba(169, 196, 221, 0.8);
   }
 
   .text-wedding-olive\/70 {
-    color: rgba(124, 144, 112, 0.7);
+    color: rgba(169, 196, 221, 0.7);
   }
 
   .text-wedding-olive\/60 {
-    color: rgba(124, 144, 112, 0.6);
+    color: rgba(169, 196, 221, 0.6);
   }
 
   .text-wedding-gold\/90 {
-    color: rgba(212, 165, 116, 0.9);
+    color: rgba(247, 231, 206, 0.9);
   }
 
   .text-wedding-gold\/80 {
-    color: rgba(212, 165, 116, 0.8);
+    color: rgba(247, 231, 206, 0.8);
   }
 
   .text-wedding-cream\/90 {
@@ -144,23 +144,23 @@
 
   /* Fondos con transparencias */
   .bg-wedding-olive\/95 {
-    background-color: rgba(124, 144, 112, 0.95);
+    background-color: rgba(169, 196, 221, 0.95);
   }
 
   .bg-wedding-olive\/20 {
-    background-color: rgba(124, 144, 112, 0.2);
+    background-color: rgba(169, 196, 221, 0.2);
   }
 
   .bg-wedding-olive\/10 {
-    background-color: rgba(124, 144, 112, 0.1);
+    background-color: rgba(169, 196, 221, 0.1);
   }
 
   .bg-wedding-gold\/20 {
-    background-color: rgba(212, 165, 116, 0.2);
+    background-color: rgba(247, 231, 206, 0.2);
   }
 
   .bg-wedding-gold\/10 {
-    background-color: rgba(212, 165, 116, 0.1);
+    background-color: rgba(247, 231, 206, 0.1);
   }
 
   .bg-wedding-cream\/90 {
@@ -177,28 +177,28 @@
 
   /* Bordes con transparencias */
   .border-wedding-gold\/20 {
-    border-color: rgba(212, 165, 116, 0.2);
+    border-color: rgba(247, 231, 206, 0.2);
   }
 
   .border-wedding-gold\/30 {
-    border-color: rgba(212, 165, 116, 0.3);
+    border-color: rgba(247, 231, 206, 0.3);
   }
 
   .border-wedding-olive\/20 {
-    border-color: rgba(124, 144, 112, 0.2);
+    border-color: rgba(169, 196, 221, 0.2);
   }
 
   /* Utilidades de líneas/divisores */
   .bg-wedding-gold\/50 {
-    background-color: rgba(212, 165, 116, 0.5);
+    background-color: rgba(247, 231, 206, 0.5);
   }
 
   .bg-wedding-gold\/40 {
-    background-color: rgba(212, 165, 116, 0.4);
+    background-color: rgba(247, 231, 206, 0.4);
   }
 
   .bg-wedding-gold\/30 {
-    background-color: rgba(212, 165, 116, 0.3);
+    background-color: rgba(247, 231, 206, 0.3);
   }
 
   /* Border left personalizado */
@@ -306,16 +306,16 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #7c9070;
+  background: #a9c4dd;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #d4a574;
+  background: #F7E7CE;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #d4a574;
+  background: #F7E7CE;
 }
 
 /* Print styles */
