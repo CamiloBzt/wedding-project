@@ -122,7 +122,7 @@
     top: 0;
     bottom: 0;
     width: 2px;
-    background: linear-gradient(180deg, #F7E7CE 0%, rgba(247, 231, 206, 0.3) 100%);
+    background: linear-gradient(180deg, #a9c4dd 0%, rgba(169, 196, 221, 0.3) 100%);
 }
 
 .timelineItem {
@@ -177,10 +177,10 @@
     top: 4px;
     width: 16px;
     height: 16px;
-    background: #F7E7CE;
+    background: #a9c4dd;
     border: 3px solid #fdf6f0;
     border-radius: 50%;
-    box-shadow: 0 0 0 3px rgba(247, 231, 206, 0.2);
+    box-shadow: 0 0 0 3px rgba(169, 196, 221, 0.2);
 }
 
 .timelineContent {
@@ -235,15 +235,14 @@
 }
 
 .mapButton {
-    background: rgba(253, 246, 240, 0.95);
+    background: linear-gradient(135deg, #7f95b3 0%, #a9c4dd 100%);
     color: #F7E7CE;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(247, 231, 206, 0.2);
+    box-shadow: 0 4px 15px rgba(169, 196, 221, 0.3);
 }
 
 .mapButton:hover {
     transform: translateY(-2px);
-    background: rgba(253, 246, 240, 1);
+    box-shadow: 0 6px 20px rgba(169, 196, 221, 0.4);
 }
 
 .footer {
