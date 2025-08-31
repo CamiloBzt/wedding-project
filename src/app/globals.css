@@ -61,7 +61,7 @@
   }
 
   .gold-gradient {
-    background: linear-gradient(135deg, #d4a574 0%, #d4a574 100%);
+    background: linear-gradient(135deg, #4b5d73 0%, #4b5d73 100%);
   }
 
   .navy-gradient {
@@ -77,7 +77,7 @@
   }
 
   .text-wedding-gold {
-    color: #d4a574;
+    color: #4b5d73;
   }
 
   .text-wedding-cream {
@@ -89,7 +89,7 @@
   }
 
   .bg-wedding-gold {
-    background-color: #d4a574;
+    background-color: #4b5d73;
   }
 
   .bg-wedding-cream {
@@ -102,7 +102,7 @@
   }
 
   .border-wedding-gold {
-    border-color: #d4a574;
+    border-color: #4b5d73;
   }
 
   .border-wedding-cream {
@@ -123,11 +123,11 @@
   }
 
   .text-wedding-gold\/90 {
-    color: rgba(212, 165, 116, 0.9);
+    color: rgba(75, 93, 115, 0.9);
   }
 
   .text-wedding-gold\/80 {
-    color: rgba(212, 165, 116, 0.8);
+    color: rgba(75, 93, 115, 0.8);
   }
 
   .text-wedding-cream\/90 {
@@ -156,11 +156,11 @@
   }
 
   .bg-wedding-gold\/20 {
-    background-color: rgba(212, 165, 116, 0.2);
+    background-color: rgba(75, 93, 115, 0.2);
   }
 
   .bg-wedding-gold\/10 {
-    background-color: rgba(212, 165, 116, 0.1);
+    background-color: rgba(75, 93, 115, 0.1);
   }
 
   .bg-wedding-cream\/90 {
@@ -177,11 +177,11 @@
 
   /* Bordes con transparencias */
   .border-wedding-gold\/20 {
-    border-color: rgba(212, 165, 116, 0.2);
+    border-color: rgba(75, 93, 115, 0.2);
   }
 
   .border-wedding-gold\/30 {
-    border-color: rgba(212, 165, 116, 0.3);
+    border-color: rgba(75, 93, 115, 0.3);
   }
 
   .border-wedding-olive\/20 {
@@ -190,15 +190,15 @@
 
   /* Utilidades de líneas/divisores */
   .bg-wedding-gold\/50 {
-    background-color: rgba(212, 165, 116, 0.5);
+    background-color: rgba(75, 93, 115, 0.5);
   }
 
   .bg-wedding-gold\/40 {
-    background-color: rgba(212, 165, 116, 0.4);
+    background-color: rgba(75, 93, 115, 0.4);
   }
 
   .bg-wedding-gold\/30 {
-    background-color: rgba(212, 165, 116, 0.3);
+    background-color: rgba(75, 93, 115, 0.3);
   }
 
   /* Border left personalizado */
@@ -310,12 +310,12 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #d4a574;
+  background: #4b5d73;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #d4a574;
+  background: #4b5d73;
 }
 
 /* Print styles */

@@ -78,7 +78,7 @@ const MusicControlButton: React.FC = () => {
               onChange={(e) => setVolume(Number(e.target.value) / 100)}
               className="w-32 h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer slider range-slider"
               style={{
-                background: `linear-gradient(to right, #d4a574 0%, #d4a574 ${
+                background: `linear-gradient(to right, #4b5d73 0%, #4b5d73 ${
                   volume * 100
                 }%, #e5e5e5 ${volume * 100}%, #e5e5e5 100%)`,
               }}
@@ -90,7 +90,7 @@ const MusicControlButton: React.FC = () => {
                 width: 16px;
                 height: 16px;
                 border-radius: 50%;
-                background: #d4a574;
+                background: #4b5d73;
                 cursor: pointer;
                 border: 2px solid #ffffff;
                 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -100,19 +100,19 @@ const MusicControlButton: React.FC = () => {
                 width: 16px;
                 height: 16px;
                 border-radius: 50%;
-                background: #d4a574;
+                background: #4b5d73;
                 cursor: pointer;
                 border: 2px solid #ffffff;
                 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
               }
 
               .range-slider::-webkit-slider-thumb:hover {
-                background: #c89660;
+                background: #3e4f63;
                 transform: scale(1.1);
               }
 
               .range-slider::-moz-range-thumb:hover {
-                background: #c89660;
+                background: #3e4f63;
                 transform: scale(1.1);
               }
             `}</style>
