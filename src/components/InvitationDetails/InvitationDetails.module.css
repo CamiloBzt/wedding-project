@@ -76,7 +76,7 @@
     display: flex;
     flex-direction: column;
     padding: 0.75rem 0;
-    border-bottom: 1px solid rgba(124, 144, 112, 0.1);
+    border-bottom: 1px solid rgba(169, 196, 221, 0.1);
 }
 
 .infoItem:last-child {
@@ -94,7 +94,7 @@
 
 .infoValue {
     font-size: 1.125rem;
-    color: #7c9070;
+    color: #a9c4dd;
     font-family: 'Montserrat', sans-serif;
     line-height: 1.5;
 }
@@ -197,7 +197,7 @@
 
 .timelineEvent {
     font-size: 1rem;
-    color: #7c9070;
+    color: #a9c4dd;
 }
 
 .actions {
@@ -236,7 +236,7 @@
 
 .mapButton {
     background: rgba(253, 246, 240, 0.95);
-    color: #7c9070;
+    color: #a9c4dd;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(212, 165, 116, 0.2);
 }

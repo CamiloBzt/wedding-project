@@ -131,7 +131,7 @@ const MusicControlButton: React.FC = () => {
         >
           {isPlaying ? (
             <svg
-              className="w-6 h-6 text-[#7c9070] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+              className="w-6 h-6 text-wedding-olive absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
               fill="none"
               stroke="currentColor"
               strokeWidth="2"
@@ -156,8 +156,8 @@ const MusicControlButton: React.FC = () => {
 
           {isPlaying && (
             <>
-              <span className="absolute inset-0 rounded-full bg-[#7c9070]/20 animate-ping"></span>
-              <span className="absolute inset-0 rounded-full bg-[#7c9070]/10 animate-ping animation-delay-200"></span>
+              <span className="absolute inset-0 rounded-full bg-wedding-olive/20 animate-ping"></span>
+              <span className="absolute inset-0 rounded-full bg-wedding-olive/10 animate-ping animation-delay-200"></span>
             </>
           )}
         </button>
