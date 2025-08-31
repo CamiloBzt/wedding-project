@@ -133,18 +133,18 @@
     width: 100%;
     padding: 14px 24px;
     background: linear-gradient(135deg,
-            #a9c4dd 0%,
-            #b2cae0 25%,
-            #bacfe3 50%,
-            #b2cae0 75%,
-            #a9c4dd 100%);
+            #f7e7ce 0%,
+            #f9ecd8 25%,
+            #ffefd6 50%,
+            #f9ecd8 75%,
+            #f7e7ce 100%);
     border-radius: 35px;
     border: none;
     cursor: pointer;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow:
-        0 6px 20px rgba(169, 196, 221, 0.4),
-        0 3px 12px rgba(169, 196, 221, 0.3),
+        0 6px 20px rgba(247, 231, 206, 0.4),
+        0 3px 12px rgba(247, 231, 206, 0.3),
         inset 0 1px 0 rgba(255, 255, 255, 0.2);
     position: relative;
     overflow: hidden;
@@ -190,8 +190,8 @@
 .mainButton:hover {
     transform: translateY(-3px) scale(1.02);
     box-shadow:
-        0 12px 35px rgba(169, 196, 221, 0.5),
-        0 6px 20px rgba(169, 196, 221, 0.4),
+        0 12px 35px rgba(247, 231, 206, 0.5),
+        0 6px 20px rgba(247, 231, 206, 0.4),
         inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
@@ -210,15 +210,15 @@
     100% {
         transform: scale(1);
         box-shadow:
-            0 6px 20px rgba(169, 196, 221, 0.4),
-            0 3px 12px rgba(169, 196, 221, 0.3);
+            0 6px 20px rgba(247, 231, 206, 0.4),
+            0 3px 12px rgba(247, 231, 206, 0.3);
     }
 
     50% {
         transform: scale(1.05);
         box-shadow:
-            0 10px 30px rgba(169, 196, 221, 0.5),
-            0 5px 18px rgba(169, 196, 221, 0.4);
+            0 10px 30px rgba(247, 231, 206, 0.5),
+            0 5px 18px rgba(247, 231, 206, 0.4);
     }
 }
 

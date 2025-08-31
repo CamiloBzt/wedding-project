@@ -67,19 +67,19 @@ const EnvelopeInvitation: React.FC = () => {
             </div>
 
             <div className={styles.letterPeeking}>
-              <div className="bg-wedding-cream p-6 md:p-8 rounded-lg shadow-xl border border-wedding-gold/20 relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-wedding-gold/5 via-transparent to-wedding-gold/10"></div>
+              <div className="bg-wedding-cream p-6 md:p-8 rounded-lg shadow-xl border border-wedding-accent/20 relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-wedding-accent/5 via-transparent to-wedding-accent/10"></div>
 
                 <div className="text-center mb-6 relative z-10">
                   <div className="flex items-center justify-center mb-4">
-                    <div className="w-16 h-px bg-gradient-to-r from-transparent via-wedding-gold to-transparent"></div>
+                    <div className="w-16 h-px bg-gradient-to-r from-transparent via-wedding-accent to-transparent"></div>
                     <div className="mx-3">
                       <svg
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
                         fill="none"
-                        className="text-wedding-gold"
+                        className="text-wedding-accent"
                       >
                         <path
                           d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
@@ -87,7 +87,7 @@ const EnvelopeInvitation: React.FC = () => {
                         />
                       </svg>
                     </div>
-                    <div className="w-16 h-px bg-gradient-to-r from-transparent via-wedding-gold to-transparent"></div>
+                    <div className="w-16 h-px bg-gradient-to-r from-transparent via-wedding-accent to-transparent"></div>
                   </div>
 
                   <div
@@ -127,11 +127,11 @@ const EnvelopeInvitation: React.FC = () => {
                   </div>
 
                   <div className="flex items-center justify-center mt-4">
-                    <div className="w-16 h-px bg-gradient-to-r from-transparent via-wedding-gold to-transparent"></div>
+                    <div className="w-16 h-px bg-gradient-to-r from-transparent via-wedding-accent to-transparent"></div>
                     <div className="mx-3">
-                      <div className="w-2 h-2 bg-wedding-gold rounded-full"></div>
+                      <div className="w-2 h-2 bg-wedding-accent rounded-full"></div>
                     </div>
-                    <div className="w-16 h-px bg-gradient-to-r from-transparent via-wedding-gold to-transparent"></div>
+                    <div className="w-16 h-px bg-gradient-to-r from-transparent via-wedding-accent to-transparent"></div>
                   </div>
                 </div>
 
@@ -218,7 +218,7 @@ const EnvelopeInvitation: React.FC = () => {
               height={heart.size}
               viewBox="0 0 24 24"
               fill="currentColor"
-              className="text-wedding-gold opacity-25"
+              className="text-wedding-accent opacity-25"
             >
               <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
             </svg>
@@ -235,7 +235,7 @@ const EnvelopeInvitation: React.FC = () => {
               animationDuration: "15s",
             }}
           >
-            <div className="w-1 h-1 bg-wedding-gold rounded-full opacity-30"></div>
+            <div className="w-1 h-1 bg-wedding-accent rounded-full opacity-30"></div>
           </div>
         ))}
       </div>

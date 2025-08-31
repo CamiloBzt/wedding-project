@@ -33,7 +33,7 @@ const LoadingScreen: React.FC = () => {
           >
             <path
               d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
-              fill="#efb810"
+              fill="#4b5d73"
             />
           </svg>
           <div className={styles.pulseRing}></div>
@@ -48,7 +48,7 @@ const LoadingScreen: React.FC = () => {
         Johanna & Enrique
       </h1>
 
-      <p className="text-wedding-gold text-lg font-sans font-light mb-8">
+      <p className="text-wedding-accent text-lg font-sans font-light mb-8">
         25.10.2025
       </p>
 
@@ -57,7 +57,7 @@ const LoadingScreen: React.FC = () => {
           className="h-full transition-all duration-300 ease-out"
           style={{
             width: `${progress}%`,
-            background: "linear-gradient(to right, #efb810, #fdf6f0)",
+            background: "linear-gradient(to right, #4b5d73, #f7e7ce)",
           }}
         />
       </div>

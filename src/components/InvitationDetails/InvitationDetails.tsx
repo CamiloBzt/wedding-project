@@ -38,7 +38,7 @@ const CountdownTimer: React.FC<{ targetDate: string }> = ({ targetDate }) => {
   return (
     <div className="flex justify-center gap-8 mb-16">
       <div className="text-center">
-        <p className="text-5xl md:text-6xl font-bold text-wedding-gold drop-shadow-lg mb-2">
+        <p className="text-5xl md:text-6xl font-bold text-wedding-accent drop-shadow-lg mb-2">
           {timeLeft.days}
         </p>
         <p className="text-base uppercase text-wedding-cream/80 font-semibold tracking-wider drop-shadow-sm">
@@ -46,7 +46,7 @@ const CountdownTimer: React.FC<{ targetDate: string }> = ({ targetDate }) => {
         </p>
       </div>
       <div className="text-center">
-        <p className="text-5xl md:text-6xl font-bold text-wedding-gold drop-shadow-lg mb-2">
+        <p className="text-5xl md:text-6xl font-bold text-wedding-accent drop-shadow-lg mb-2">
           {timeLeft.hours}
         </p>
         <p className="text-base uppercase text-wedding-cream/80 font-semibold tracking-wider drop-shadow-sm">
@@ -54,7 +54,7 @@ const CountdownTimer: React.FC<{ targetDate: string }> = ({ targetDate }) => {
         </p>
       </div>
       <div className="text-center">
-        <p className="text-5xl md:text-6xl font-bold text-wedding-gold drop-shadow-lg mb-2">
+        <p className="text-5xl md:text-6xl font-bold text-wedding-accent drop-shadow-lg mb-2">
           {timeLeft.minutes}
         </p>
         <p className="text-base uppercase text-wedding-cream/80 font-semibold tracking-wider drop-shadow-sm">
@@ -211,8 +211,8 @@ const InvitationDetails: React.FC = () => {
       <header className="sticky top-0 z-50 bg-wedding-olive/95 backdrop-blur-sm border-b border-wedding-accent/20 py-3">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <div className="flex items-center justify-center gap-2">
-            <HeartIcon size={18} className="text-wedding-gold" animated />
-            <span className="font-script text-wedding-gold text-lg">
+            <HeartIcon size={18} className="text-wedding-accent" animated />
+            <span className="font-script text-wedding-accent text-lg">
               {weddingDetails.hashtag}
             </span>
           </div>
@@ -221,7 +221,7 @@ const InvitationDetails: React.FC = () => {
 
       <div className="relative py-20 text-center overflow-hidden z-10">
         <div className="absolute inset-0 flex items-center justify-center opacity-8">
-          <h1 className="text-[8rem] md:text-[12rem] font-bold text-wedding-gold tracking-widest transform -rotate-12 select-none">
+          <h1 className="text-[8rem] md:text-[12rem] font-bold text-wedding-accent tracking-widest transform -rotate-12 select-none">
             SAVE THE DATE
           </h1>
         </div>
@@ -246,23 +246,23 @@ const InvitationDetails: React.FC = () => {
         >
           <AnimatedText
             text={`${weddingDetails.brideName} & ${weddingDetails.groomName}`}
-            className="text-6xl md:text-7xl font-script text-wedding-gold mb-8 drop-shadow-lg"
+            className="text-6xl md:text-7xl font-script text-wedding-accent mb-8 drop-shadow-lg"
             delay={0}
           />
 
           <div className="flex items-center justify-center gap-4 mb-8">
-            <div className="h-px bg-wedding-gold/50 w-24"></div>
+            <div className="h-px bg-wedding-accent/50 w-24"></div>
             <HeartIcon
-              className="text-wedding-gold drop-shadow-md"
+              className="text-wedding-accent drop-shadow-md"
               size={32}
               animated
             />
-            <div className="h-px bg-wedding-gold/50 w-24"></div>
+            <div className="h-px bg-wedding-accent/50 w-24"></div>
           </div>
 
           <AnimatedText
             text={weddingDetails.date}
-            className="text-2xl font-serif text-wedding-gold/90 mb-12 drop-shadow-sm"
+            className="text-2xl font-serif text-wedding-accent/90 mb-12 drop-shadow-sm"
             delay={200}
           />
 
@@ -408,7 +408,7 @@ const InvitationDetails: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 text-center">
           <AnimatedText
             text="Con amor, Johanna & Enrique"
-            className="font-script text-3xl text-wedding-gold mb-4"
+            className="font-script text-3xl text-wedding-accent mb-4"
             delay={100}
           />
           <p className="text-wedding-cream/60 text-sm">
