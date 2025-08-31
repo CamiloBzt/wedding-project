@@ -15,7 +15,7 @@ const config: Config = {
         "wedding-olive-dark": "#76899a", // Azul pastel oscuro
         "wedding-olive-light": "#bacfe3", // Azul pastel muy claro
         "wedding-accent": "#4b5d73", // Azul oscuro para acentos
-        "wedding-gold": "#d4a574", // Dorado suave para detalles
+        "wedding-gold": "#ffd700", // Dorado brillante para detalles
         "wedding-cream": "#fdf6f0", // Crema
         "wedding-sage": "#b5c2a9", // Verde salvia claro
         "wedding-white": "#ffffff",
