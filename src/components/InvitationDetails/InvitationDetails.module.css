@@ -224,19 +224,19 @@
 }
 
 .confirmButton {
-    background: linear-gradient(135deg, #F7E7CE 0%, #F7E7CE 100%);
-    color: white;
-    box-shadow: 0 4px 15px rgba(247, 231, 206, 0.3);
+    background: linear-gradient(135deg, #7f95b3 0%, #a9c4dd 100%);
+    color: #F7E7CE;
+    box-shadow: 0 4px 15px rgba(169, 196, 221, 0.3);
 }
 
 .confirmButton:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(247, 231, 206, 0.4);
+    box-shadow: 0 6px 20px rgba(169, 196, 221, 0.4);
 }
 
 .mapButton {
     background: rgba(253, 246, 240, 0.95);
-    color: #a9c4dd;
+    color: #F7E7CE;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(247, 231, 206, 0.2);
 }
