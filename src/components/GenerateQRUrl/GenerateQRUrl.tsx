@@ -46,7 +46,7 @@ export const QRPhotoSection: React.FC<{
       {/* Instrucciones */}
       <div className="space-y-4 text-left max-w-md mx-auto">
         <div className="flex items-start gap-3">
-          <span className="flex-shrink-0 w-6 h-6 bg-wedding-gold text-white rounded-full flex items-center justify-center text-sm font-bold">
+          <span className="flex-shrink-0 w-6 h-6 bg-wedding-olive/95 text-white rounded-full flex items-center justify-center text-sm font-bold">
             1
           </span>
           <p className="text-sm text-wedding-olive">
@@ -55,7 +55,7 @@ export const QRPhotoSection: React.FC<{
         </div>
 
         <div className="flex items-start gap-3">
-          <span className="flex-shrink-0 w-6 h-6 bg-wedding-gold text-white rounded-full flex items-center justify-center text-sm font-bold">
+          <span className="flex-shrink-0 w-6 h-6 bg-wedding-olive/95 text-white rounded-full flex items-center justify-center text-sm font-bold">
             2
           </span>
           <p className="text-sm text-wedding-olive">
@@ -64,7 +64,7 @@ export const QRPhotoSection: React.FC<{
         </div>
 
         <div className="flex items-start gap-3">
-          <span className="flex-shrink-0 w-6 h-6 bg-wedding-gold text-white rounded-full flex items-center justify-center text-sm font-bold">
+          <span className="flex-shrink-0 w-6 h-6 bg-wedding-olive/95 text-white rounded-full flex items-center justify-center text-sm font-bold">
             3
           </span>
           <p className="text-sm text-wedding-olive">
@@ -89,7 +89,7 @@ export const QRPhotoSection: React.FC<{
       {/* Botón para abrir directamente */}
       <button
         onClick={() => window.open(driveUrl, "_blank")}
-        className="mt-4 px-6 py-2 bg-wedding-gold text-white rounded-lg hover:bg-wedding-gold/90 transition-colors duration-200"
+        className="mt-4 px-6 py-2 bg-wedding-olive/95 text-white rounded-lg transition-colors shadow-md hover:shadow-lg duration-200 cursor-pointer"
       >
         📁 Abrir carpeta directamente
       </button>
