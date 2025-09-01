@@ -7,6 +7,7 @@ import { useWeddingDetails } from "@/contexts/InvitationContext";
 import React, { useEffect, useState } from "react";
 import { QRPhotoSection } from "../GenerateQRUrl/GenerateQRUrl";
 import MusicControlButton from "../shared/MusicControlButton";
+import LocationModal from "../shared/LocationModal";
 import styles from "./InvitationDetails.module.css";
 
 const CountdownTimer: React.FC<{ targetDate: string }> = ({ targetDate }) => {
@@ -69,6 +70,7 @@ const InvitationDetails: React.FC = () => {
   const weddingDetails = useWeddingDetails();
   const [activeSection, setActiveSection] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
+  const [isMapOpen, setIsMapOpen] = useState(false);
 
   const sections = [
     {
@@ -147,6 +149,9 @@ const InvitationDetails: React.FC = () => {
   const handleConfirmAttendance = () => {
     window.open(googleFormUrl, "_blank");
   };
+
+  const handleOpenMap = () => setIsMapOpen(true);
+  const handleCloseMap = () => setIsMapOpen(false);
 
   useEffect(() => {
     setTimeout(() => setIsVisible(true), 100);
@@ -396,7 +401,9 @@ const InvitationDetails: React.FC = () => {
             <HeartIcon size={20} className="mr-2" />
             Confirmar Asistencia
           </button>
-          <button className={styles.mapButton}>📍 Ver Ubicación</button>
+          <button onClick={handleOpenMap} className={styles.mapButton}>
+            📍 Ver Ubicación
+          </button>
         </div>
 
         <div className={styles.footer}>
@@ -417,6 +424,11 @@ const InvitationDetails: React.FC = () => {
         </div>
       </footer>
       <MusicControlButton />
+      <LocationModal
+        isOpen={isMapOpen}
+        onClose={handleCloseMap}
+        address={weddingDetails.address}
+      />
     </div>
   );
 };
