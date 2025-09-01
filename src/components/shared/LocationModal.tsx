@@ -18,8 +18,7 @@ const LocationModal: React.FC<LocationModalProps> = ({
   const encodedAddress = encodeURIComponent(address);
   const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodedAddress}`;
   const wazeUrl = `https://waze.com/ul?q=${encodedAddress}&navigate=yes`;
-  const uberUrl =
-    `https://m.uber.com/ul/?action=setPickup&dropoff[formatted_address]=${encodedAddress}`;
+  const uberUrl = `https://m.uber.com/ul/?action=setPickup&dropoff[formatted_address]=${encodedAddress}`;
 
   const copyAddress = async () => {
     try {
@@ -31,11 +30,7 @@ const LocationModal: React.FC<LocationModalProps> = ({
   };
 
   const buttonBase =
-    "flex items-center justify-center gap-2 px-4 py-2 rounded-full text-sm font-semibold shadow-md transition-transform hover:-translate-y-0.5";
-  const gradientButton =
-    `${buttonBase} bg-gradient-to-r from-wedding-olive-dark to-wedding-olive text-wedding-cream`;
-  const copyButton =
-    `${buttonBase} bg-wedding-gray-light text-wedding-gray-dark hover:bg-wedding-olive-light`;
+    "bg-wedding-olive/95 flex items-center justify-center gap-2 px-4 py-2 rounded-full text-sm font-semibold shadow-md transition-transform hover:-translate-y-0.5";
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-wedding-gray-dark/60 backdrop-blur-sm p-4">
@@ -61,7 +56,7 @@ const LocationModal: React.FC<LocationModalProps> = ({
             href={wazeUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className={gradientButton}
+            className={buttonBase}
           >
             🚘 <span>Waze</span>
           </a>
@@ -69,7 +64,7 @@ const LocationModal: React.FC<LocationModalProps> = ({
             href={googleMapsUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className={gradientButton}
+            className={buttonBase}
           >
             🗺️ <span>Google Maps</span>
           </a>
@@ -77,11 +72,11 @@ const LocationModal: React.FC<LocationModalProps> = ({
             href={uberUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className={gradientButton}
+            className={buttonBase}
           >
             🚕 <span>Uber</span>
           </a>
-          <button onClick={copyAddress} className={copyButton}>
+          <button onClick={copyAddress} className={buttonBase}>
             📋 <span>Copiar dirección</span>
           </button>
         </div>
@@ -91,4 +86,3 @@ const LocationModal: React.FC<LocationModalProps> = ({
 };
 
 export default LocationModal;
-
