@@ -30,14 +30,14 @@ const LocationModal: React.FC<LocationModalProps> = ({
   };
 
   const buttonBase =
-    "bg-wedding-olive/95 flex items-center justify-center gap-2 px-4 py-2 rounded-full text-sm font-semibold shadow-md transition-transform hover:-translate-y-0.5";
+    "bg-wedding-olive/95 flex items-center justify-center gap-2 px-4 py-2 rounded-full text-sm font-semibold shadow-md transition-transform hover:-translate-y-0.5 cursor-pointer";
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-wedding-gray-dark/60 backdrop-blur-sm p-4">
       <div className="relative w-full max-w-lg overflow-hidden rounded-2xl border border-wedding-gold/30 bg-wedding-cream shadow-2xl">
         <button
           onClick={onClose}
-          className="absolute right-4 top-4 text-wedding-olive-dark hover:text-wedding-olive"
+          className="absolute right-4 top-4 text-wedding-olive-dark hover:text-wedding-olive cursor-pointer"
           aria-label="Cerrar"
         >
           ✕
