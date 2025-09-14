@@ -12,29 +12,33 @@ import MusicControlButton from "../shared/MusicControlButton";
 import styles from "./InvitationDetails.module.css";
 
 const CountdownTimer: React.FC<{ targetDate: string }> = ({ targetDate }) => {
-  const [timeLeft, setTimeLeft] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-  });
+  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0 });
 
   useEffect(() => {
-    const calculateTimeLeft = () => {
-      const difference = new Date(targetDate).getTime() - new Date().getTime();
-
-      if (difference > 0) {
-        setTimeLeft({
-          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-          hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-          minutes: Math.floor((difference / 1000 / 60) % 60),
-        });
-      }
+    const getTarget = () => {
+      if (targetDate.includes("T")) return new Date(targetDate);
+      const [y, m, d] = targetDate.split("-").map(Number);
+      return new Date(y, (m ?? 1) - 1, d ?? 1, 0, 0, 0, 0);
     };
 
-    calculateTimeLeft();
-    const timer = setInterval(calculateTimeLeft, 60000);
+    const target = getTarget();
 
-    return () => clearInterval(timer);
+    const tick = () => {
+      const diff = target.getTime() - Date.now();
+      if (diff <= 0) {
+        setTimeLeft({ days: 0, hours: 0, minutes: 0 });
+        return;
+      }
+      const totalMinutes = Math.floor(diff / 60000);
+      const days = Math.floor(totalMinutes / (60 * 24));
+      const hours = Math.floor((totalMinutes % (60 * 24)) / 60);
+      const minutes = totalMinutes % 60;
+      setTimeLeft({ days, hours, minutes });
+    };
+
+    tick();
+    const id = setInterval(tick, 60000);
+    return () => clearInterval(id);
   }, [targetDate]);
 
   return (
@@ -276,7 +280,7 @@ const InvitationDetails: React.FC = () => {
             delay={200}
           />
 
-          <CountdownTimer targetDate="2025-10-25" />
+          <CountdownTimer targetDate="2025-10-25T15:00:00-05:00" />
         </div>
       </div>
 
