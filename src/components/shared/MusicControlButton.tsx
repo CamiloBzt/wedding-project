@@ -4,24 +4,12 @@ import { useMusic } from "@/contexts/MusicContext";
 import React, { useEffect, useRef, useState } from "react";
 
 const MusicControlButton: React.FC = () => {
-  const { isPlaying, volume, toggleMusic, setVolume } = useMusic();
+  const { isPlaying, toggleMusic } = useMusic();
   const [showVolumeSlider, setShowVolumeSlider] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const handleMouseLeave = () => {
-    timeoutRef.current = setTimeout(() => {
-      setShowVolumeSlider(false);
-    }, 300);
-  };
-
-  const handleSliderMouseEnter = () => {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
-  };
-
-  const handleSliderMouseLeave = () => {
     timeoutRef.current = setTimeout(() => {
       setShowVolumeSlider(false);
     }, 300);
@@ -64,64 +52,6 @@ const MusicControlButton: React.FC = () => {
   return (
     <div className="fixed bottom-6 right-6 z-50" ref={containerRef}>
       <div className="relative">
-        {showVolumeSlider && (
-          <div
-            onMouseEnter={handleSliderMouseEnter}
-            onMouseLeave={handleSliderMouseLeave}
-            className="absolute bottom-full mb-2 right-0 bg-white/95 backdrop-blur-sm rounded-lg p-3 shadow-lg border border-gray-200/50"
-          >
-            <input
-              type="range"
-              min="0"
-              max="100"
-              value={volume * 100}
-              onChange={(e) => setVolume(Number(e.target.value) / 100)}
-              className="w-32 h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer slider range-slider"
-              style={{
-                background: `linear-gradient(to right, #F7E7CE 0%, #F7E7CE ${
-                  volume * 100
-                }%, #e5e5e5 ${volume * 100}%, #e5e5e5 100%)`,
-              }}
-            />
-
-            <style jsx>{`
-              .range-slider::-webkit-slider-thumb {
-                appearance: none;
-                width: 16px;
-                height: 16px;
-                border-radius: 50%;
-                background: #F7E7CE;
-                cursor: pointer;
-                border: 2px solid #ffffff;
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-              }
-
-              .range-slider::-moz-range-thumb {
-                width: 16px;
-                height: 16px;
-                border-radius: 50%;
-                background: #F7E7CE;
-                cursor: pointer;
-                border: 2px solid #ffffff;
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-              }
-
-              .range-slider::-webkit-slider-thumb:hover {
-                background: #e5d2b8;
-                transform: scale(1.1);
-              }
-
-              .range-slider::-moz-range-thumb:hover {
-                background: #e5d2b8;
-                transform: scale(1.1);
-              }
-            `}</style>
-            <p className="text-xs text-gray-600 mt-1 text-center">
-              {Math.round(volume * 100)}%
-            </p>
-          </div>
-        )}
-
         <button
           onClick={toggleMusic}
           onMouseEnter={handleMouseEnter}
