@@ -31,7 +31,7 @@ export function MusicProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      backgroundMusicRef.current = new Audio("/sounds/wedding-bg.m4a");
+      backgroundMusicRef.current = new Audio("/sounds/wedding-bg.mp3");
       backgroundMusicRef.current.loop = true;
       backgroundMusicRef.current.volume = volume;
       backgroundMusicRef.current.preload = "auto";

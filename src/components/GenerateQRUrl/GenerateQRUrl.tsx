@@ -43,6 +43,14 @@ export const QRPhotoSection: React.FC<{
         </p>
       </div>
 
+      {/* Botón para abrir directamente */}
+      <button
+        onClick={() => window.open(driveUrl, "_blank")}
+        className="mb-6 px-6 py-2 bg-wedding-olive/95 text-white rounded-lg transition-colors shadow-md hover:shadow-lg duration-200 cursor-pointer"
+      >
+        📁 Abrir carpeta directamente
+      </button>
+
       {/* Instrucciones */}
       <div className="space-y-4 text-left max-w-md mx-auto">
         <div className="flex items-start gap-3">
@@ -85,14 +93,6 @@ export const QRPhotoSection: React.FC<{
           Usa este hashtag en Instagram, Facebook o Twitter
         </p>
       </div>
-
-      {/* Botón para abrir directamente */}
-      <button
-        onClick={() => window.open(driveUrl, "_blank")}
-        className="mt-4 px-6 py-2 bg-wedding-olive/95 text-white rounded-lg transition-colors shadow-md hover:shadow-lg duration-200 cursor-pointer"
-      >
-        📁 Abrir carpeta directamente
-      </button>
     </div>
   );
 };
