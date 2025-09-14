@@ -36,7 +36,7 @@ export function MusicProvider({ children }: { children: ReactNode }) {
       backgroundMusicRef.current.volume = volume;
       backgroundMusicRef.current.preload = "auto";
 
-      backgroundMusicRef.current.addEventListener("canplaythrough", () => {
+      backgroundMusicRef.current.addEventListener("loadedmetadata", () => {
         setIsReady(true);
 
         if (!hasTriedAutoplay.current) {
@@ -44,6 +44,7 @@ export function MusicProvider({ children }: { children: ReactNode }) {
           tryAutoplay();
         }
       });
+      backgroundMusicRef.current.load();
 
       backgroundMusicRef.current.addEventListener("play", () => {
         setIsPlaying(true);
@@ -54,8 +55,15 @@ export function MusicProvider({ children }: { children: ReactNode }) {
       });
 
       const handleUserInteraction = async () => {
-        if (!isPlaying && isReady) {
-          await initializeMusic();
+        if (!isPlaying) {
+          try {
+            await initializeMusic();
+          } catch (error) {
+            console.log(
+              "Error al manejar interacción del usuario:",
+              error
+            );
+          }
         }
 
         document.removeEventListener("click", handleUserInteraction);
@@ -97,7 +105,7 @@ export function MusicProvider({ children }: { children: ReactNode }) {
   };
 
   const initializeMusic = async (): Promise<void> => {
-    if (!backgroundMusicRef.current || !isReady) return;
+    if (!backgroundMusicRef.current) return;
 
     try {
       if (backgroundMusicRef.current.paused) {
