@@ -137,18 +137,15 @@ const EnvelopeInvitation: React.FC = () => {
 
                 <div className="space-y-4 mb-6 relative z-10">
                   <div className="text-center">
-                    <p className="text-gray-700 font-sans text-sm md:text-base leading-relaxed italic">
-                      &quot;Después de caminar juntos por senderos de aventuras,
+                    <p className="text-gray-700 font-sans text-base md:text-lg leading-relaxed font-semibold mb-2">
+                      El gran día llegó 💍✨
                     </p>
-                    <p className="text-gray-700 font-sans text-sm md:text-base leading-relaxed italic mb-3">
-                      risas y sueños compartidos...&quot;
+                    <p className="text-gray-700 font-sans text-sm md:text-base leading-relaxed mb-2">
+                      Damos el paso más importante de nuestras vidas y queremos
+                      que seas parte de esta celebración única.
                     </p>
-                  </div>
-
-                  <div className="text-center mt-4">
-                    <p className="text-gray-600 font-sans text-xs md:text-sm leading-relaxed">
-                      Será un honor contar con su compañía para celebrar este
-                      día tan especial.
+                    <p className="text-gray-700 font-sans text-sm md:text-base leading-relaxed">
+                      ¡Prepárate para brindar, reír y bailar con nosotros!
                     </p>
                   </div>
                 </div>

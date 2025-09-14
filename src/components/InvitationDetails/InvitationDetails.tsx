@@ -5,9 +5,10 @@ import FloralDecoration from "@/components/shared/FloralDecoration";
 import HeartIcon from "@/components/shared/HeartIcon";
 import { useWeddingDetails } from "@/contexts/InvitationContext";
 import React, { useEffect, useState } from "react";
+import DressCodePoster from "../DressCodePoster/DressCodePoster";
 import { QRPhotoSection } from "../GenerateQRUrl/GenerateQRUrl";
-import MusicControlButton from "../shared/MusicControlButton";
 import LocationModal from "../shared/LocationModal";
+import MusicControlButton from "../shared/MusicControlButton";
 import styles from "./InvitationDetails.module.css";
 
 const CountdownTimer: React.FC<{ targetDate: string }> = ({ targetDate }) => {
@@ -78,10 +79,11 @@ const InvitationDetails: React.FC = () => {
       title: "Ceremonia & Recepción",
       icon: "💒🥂",
       content: {
-        hora: "3:00 PM",
-        lugar: weddingDetails.venue,
+        hora: "¡Te esperamos a las 3:00 PM para celebrar juntos este gran día!",
+        lugar: `La cita es en: ${weddingDetails.venue}`,
         dirección: weddingDetails.address,
-        nota: "Por favor llegar puntualmente a las 3:00 PM.",
+        parqueadero:
+          "Contamos con parqueadero disponible dentro del lugar para tu comodidad.",
       },
     },
     {
@@ -89,9 +91,23 @@ const InvitationDetails: React.FC = () => {
       title: "Código de Vestimenta",
       icon: "🤵🏻👰🏻",
       content: {
-        estilo: "Formal Elegante",
-        colores: "Evitar blanco y negro completo",
-        sugerencia: "Colores pasteles bienvenidos",
+        estilo:
+          "¡Vístete para brillar! Elige un look formal elegante y acompáñanos con tu mejor sonrisa.",
+        bridesmaids: {
+          bullets: [
+            "Vestido formal largo o corto, elige el que más te guste.",
+            "Zapato formal para bailar toda la noche.",
+          ],
+        },
+        groomsmen: {
+          bullets: [
+            "Traje formal (evita el azul, por favor).",
+            "Camisa blanca, clásica y elegante.",
+            "Corbata (cualquier color menos azul).",
+            "Zapato formal, ¡prepárate para la pista!",
+          ],
+        },
+        nota: "Reservamos los colores blanco, nude y azul en todos sus tonos para los novios.",
       },
     },
     {
@@ -99,11 +115,14 @@ const InvitationDetails: React.FC = () => {
       title: "Tips y Notas",
       icon: "📋",
       content: {
-        puntualidad: "¡Por favor ser puntuales!",
-        adultos: "Evento solo para adultos",
-        confirmación: "Confirmar asistencia antes del 10 de Octubre",
-        clima: "Llevar abrigo para espacios exteriores",
-        extras: "Olvidarse de todo y a disfrutar!!!",
+        puntualidad:
+          "¡No llegues tarde! Comenzamos puntuales a las 3:00 PM para que no te pierdas ningún momento especial.",
+        invitados:
+          "Queremos que disfrutes al máximo, por eso nuestra celebración será solo para adultos.",
+        confirmación:
+          "La fiesta no será la misma sin ti 🎶💃. Confírmanos tu asistencia antes del 10 de Octubre de 2025, para reservar tu lugar en la pista de baile.",
+        clima:
+          "El clima puede refrescar en la noche, ¡no olvides llevar un abrigo para los espacios exteriores!",
       },
     },
     {
@@ -111,9 +130,7 @@ const InvitationDetails: React.FC = () => {
       title: "Regalos",
       icon: "🎁",
       content: {
-        mensaje: "Tu presencia es nuestro mejor regalo",
-        opción: "Lluvia de sobres disponible",
-        banco: "Depósito bancario: XXXX XXXX XXXX XXXX",
+        nota: "✨El mejor regalo será compartir contigo este día tan especial. Pero si quieres tener un detalle con nosotros… que sea lluvia de sobres 💌😉. Prometemos transformarlos en viajes, recuerdos y mucha felicidad.✨",
       },
     },
     {
@@ -121,11 +138,12 @@ const InvitationDetails: React.FC = () => {
       title: "Comparte tus fotos",
       icon: "📸",
       content: {
-        instrucción: "Escanea el código QR para subir tus fotos y videos",
+        instrucción:
+          "¡Queremos revivir cada momento! Escanea el código QR para subir tus fotos y videos de la fiesta.",
         drive_url:
           "https://drive.google.com/drive/folders/1VtRG4Yc1egkPu831W4r62eauCiirY_3d?usp=sharing",
         hashtag: weddingDetails.hashtag || "#JohannaYEnrique2025",
-        nota: "También puedes usar nuestro hashtag en redes sociales",
+        nota: "No olvides usar nuestro hashtag en redes sociales para compartir tus recuerdos.",
       },
     },
   ];
@@ -293,59 +311,42 @@ const InvitationDetails: React.FC = () => {
               {sections[activeSection].title}
             </h2>
 
-            <div className={styles.sectionContent}>
-              {Object.entries(sections[activeSection].content)
-                .filter(([key]) => key !== "drive_url")
-                .map(([key, value]) => (
-                  <div key={key} className={styles.infoItem}>
-                    <span className={styles.infoLabel}>
-                      {key.charAt(0).toUpperCase() + key.slice(1)}:
-                    </span>
-                    <span className={styles.infoValue}>{value}</span>
-                  </div>
-                ))}
-            </div>
-
-            {activeSection === 2 && (
-              <div className="mt-6 p-4 bg-wedding-olive/10 rounded-lg">
-                <h4 className="text-lg font-serif text-wedding-olive mb-3">
-                  Consejos importantes:
-                </h4>
-                <ul className="space-y-2 text-sm text-wedding-olive/80">
-                  <li>
-                    • Queremos que disfrutes al máximo, por eso es solo para
-                    adultos
-                  </li>
-                  <li>• Confirma tu asistencia lo antes posible</li>
-                  <li>• Lleva abrigo para los espacios exteriores</li>
-                  <li>• ¡Olvídate de todo y disfruta con nosotros!</li>
-                </ul>
+            {activeSection === 1 ? (
+              <DressCodePoster
+                bridesmaids={{
+                  title: "Mujeres",
+                  bullets:
+                    sections[activeSection].content.bridesmaids?.bullets ?? [],
+                  imageSrc: "/images/womens.png",
+                  imageAlt: "Vestidos sugeridos",
+                }}
+                groomsmen={{
+                  title: "Hombres",
+                  bullets:
+                    sections[activeSection].content.groomsmen?.bullets ?? [],
+                  imageSrc: "/images/mens.png",
+                  imageAlt: "Trajes sugeridos",
+                }}
+                note={sections[activeSection].content.nota}
+              />
+            ) : activeSection === 3 ? (
+              <div className="mt-6 p-6">
+                <p className="text-center text-wedding-olive text-base md:text-lg leading-relaxed">
+                  {sections[activeSection].content.nota}
+                </p>
               </div>
-            )}
-
-            {activeSection === 3 && (
-              <div className="mt-6 p-4 bg-wedding-gold/10 rounded-lg">
-                <h4 className="text-lg font-serif text-wedding-olive mb-3">
-                  Opciones para regalos:
-                </h4>
-                <div className="space-y-3 text-sm">
-                  <div className="p-3 bg-wedding-cream rounded border-l-3 border-wedding-gold">
-                    <p className="font-semibold text-wedding-olive">
-                      Sobres en la recepción
-                    </p>
-                    <p className="text-wedding-olive/70">
-                      Tendremos un cofre especial disponible
-                    </p>
-                  </div>
-                  <div className="p-3 bg-wedding-cream rounded border-l-3 border-wedding-gold">
-                    <p className="font-semibold text-wedding-olive">
-                      Transferencia bancaria
-                    </p>
-                    <p className="text-wedding-olive/70">
-                      Cuenta disponible por mensaje privado
-                    </p>
-                  </div>
-                </div>
+            ) : (
+              <div className={styles.sectionContent}>
+                {Object.entries(sections[activeSection].content)
+                  .filter(([key]) => !["drive_url"].includes(key))
+                  .map(([key, value]) => (
+                    <div key={key} className={styles.infoItem}>
+                      <span className={styles.infoLabel}>
+                        {key.charAt(0).toUpperCase() + key.slice(1)}:
+                      </span>
+                      <span className={styles.infoValue}>{String(value)}</span>
+                    </div>
+                  ))}
               </div>
             )}
 
@@ -355,28 +356,6 @@ const InvitationDetails: React.FC = () => {
                 hashtag={sections[activeSection].content.hashtag ?? ""}
               />
             )}
-          </div>
-        </div>
-
-        <div className={`${styles.timeline} relative`}>
-          <div className="absolute -top-4 -left-4 z-5">
-            <FloralDecoration size="small" opacity={0.15} />
-          </div>
-          <div className="absolute -bottom-4 -right-4 z-5">
-            <FloralDecoration size="medium" opacity={0.12} />
-          </div>
-
-          <h3 className="text-2xl font-serif text-wedding-olive mb-6 text-center">
-            Itinerario del Día
-          </h3>
-          <div className={styles.timelineItems}>
-            <TimelineItem time="4:30 PM" event="Llegada de invitados" />
-            <TimelineItem time="5:00 PM" event="Ceremonia religiosa" />
-            <TimelineItem time="6:30 PM" event="Cocktail de bienvenida" />
-            <TimelineItem time="7:00 PM" event="Recepción y cena" />
-            <TimelineItem time="9:00 PM" event="Primer baile" />
-            <TimelineItem time="10:00 PM" event="Fiesta" />
-            <TimelineItem time="2:00 AM" event="Fin del evento" />
           </div>
         </div>
 
@@ -419,18 +398,5 @@ const InvitationDetails: React.FC = () => {
     </div>
   );
 };
-
-const TimelineItem: React.FC<{ time: string; event: string }> = ({
-  time,
-  event,
-}) => (
-  <div className={styles.timelineItem}>
-    <div className={styles.timelineDot}></div>
-    <div className={styles.timelineContent}>
-      <span className={styles.timelineTime}>{time}</span>
-      <span className={styles.timelineEvent}>{event}</span>
-    </div>
-  </div>
-);
 
 export default InvitationDetails;
