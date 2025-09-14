@@ -37,9 +37,9 @@ const WEDDING_INFO: WeddingDetails = {
   groomName: "Enrique",
   brideName: "Johanna",
   date: "25 de Octubre, 2025",
-  time: "5:00 PM",
-  venue: "Jardín Los Robles",
-  address: "Calle Principal #123, Bogotá",
+  time: "3:00 PM",
+  venue: "Casa Serendipia",
+  address: "Carrera 90 # 152A - 25, Bogotá",
   hashtag: "#JohannaYEnrique2025",
 };
 

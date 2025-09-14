@@ -74,36 +74,24 @@ const InvitationDetails: React.FC = () => {
 
   const sections = [
     {
-      id: "ceremony",
-      title: "Ceremonia",
-      icon: "💒",
+      id: "ceremony-reception",
+      title: "Ceremonia & Recepción",
+      icon: "💒🥂",
       content: {
-        time: "5:00 PM",
-        location: "Iglesia San José",
-        address: "Calle 100 #15-20, Bogotá",
-        note: "Por favor llegar 15 minutos antes",
-      },
-    },
-    {
-      id: "reception",
-      title: "Recepción",
-      icon: "🥂",
-      content: {
-        time: "7:00 PM",
-        location: weddingDetails.venue,
-        address: weddingDetails.address,
-        note: "Cocktail de bienvenida a las 6:30 PM",
+        hora: "3:00 PM",
+        lugar: weddingDetails.venue,
+        dirección: weddingDetails.address,
+        nota: "Por favor llegar puntualmente a las 3:00 PM.",
       },
     },
     {
       id: "dress-code",
-      title: "Dress Code",
-      icon: "👗",
+      title: "Código de Vestimenta",
+      icon: "🤵🏻👰🏻",
       content: {
-        style: "Formal Elegante",
-        colors: "Evitar blanco y negro completo",
-        suggestion: "Colores pasteles bienvenidos",
-        note: "Black tie opcional",
+        estilo: "Formal Elegante",
+        colores: "Evitar blanco y negro completo",
+        sugerencia: "Colores pasteles bienvenidos",
       },
     },
     {
@@ -126,7 +114,6 @@ const InvitationDetails: React.FC = () => {
         mensaje: "Tu presencia es nuestro mejor regalo",
         opción: "Lluvia de sobres disponible",
         banco: "Depósito bancario: XXXX XXXX XXXX XXXX",
-        paypal: "PayPal: correopaypal@gmail.com",
       },
     },
     {
@@ -134,7 +121,7 @@ const InvitationDetails: React.FC = () => {
       title: "Comparte tus fotos",
       icon: "📸",
       content: {
-        instruccion: "Escanea el código QR para subir tus fotos y videos",
+        instrucción: "Escanea el código QR para subir tus fotos y videos",
         drive_url:
           "https://drive.google.com/drive/folders/1VtRG4Yc1egkPu831W4r62eauCiirY_3d?usp=sharing",
         hashtag: weddingDetails.hashtag || "#JohannaYEnrique2025",
@@ -158,7 +145,7 @@ const InvitationDetails: React.FC = () => {
 
     const interval = setInterval(() => {
       setActiveSection((prev) => (prev + 1) % sections.length);
-    }, 60000);
+    }, 300000);
     return () => clearInterval(interval);
   }, [sections.length]);
 
@@ -319,7 +306,7 @@ const InvitationDetails: React.FC = () => {
                 ))}
             </div>
 
-            {activeSection === 3 && (
+            {activeSection === 2 && (
               <div className="mt-6 p-4 bg-wedding-olive/10 rounded-lg">
                 <h4 className="text-lg font-serif text-wedding-olive mb-3">
                   Consejos importantes:
@@ -336,7 +323,7 @@ const InvitationDetails: React.FC = () => {
               </div>
             )}
 
-            {activeSection === 4 && (
+            {activeSection === 3 && (
               <div className="mt-6 p-4 bg-wedding-gold/10 rounded-lg">
                 <h4 className="text-lg font-serif text-wedding-olive mb-3">
                   Opciones para regalos:
@@ -362,7 +349,7 @@ const InvitationDetails: React.FC = () => {
               </div>
             )}
 
-            {activeSection === 5 && (
+            {activeSection === 4 && (
               <QRPhotoSection
                 driveUrl={sections[activeSection].content.drive_url ?? ""}
                 hashtag={sections[activeSection].content.hashtag ?? ""}
